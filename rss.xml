@@ -9,25 +9,41 @@
     <channel>
         <title>Ajatar</title>
         <link>https://ajatars.github.io/</link>
+<<<<<<< HEAD
         <description>MemE 是一个强大且可高度定制的 GoHugo 博客主题，专为个人博客设计。</description>
+=======
+        <description>Ajatar's blog</description>
+>>>>>>> a194d2ba5207e0a8f79120dde3340f926eec9218
         <generator>Hugo 0.67.0 https://gohugo.io/</generator>
         
             <language>zh-CN</language>
         
         
+<<<<<<< HEAD
             <managingEditor>reuixiy@gmail.com (reuixiy)</managingEditor>
         
         
             <webMaster>reuixiy@gmail.com (reuixiy)</webMaster>
+=======
+            <managingEditor>Ajatars@163.com (Ajatar)</managingEditor>
+        
+        
+            <webMaster>Ajatars@163.com (Ajatar)</webMaster>
+>>>>>>> a194d2ba5207e0a8f79120dde3340f926eec9218
         
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
         
+<<<<<<< HEAD
         <lastBuildDate>Sun, 15 Mar 2020 14:45:33 +0800</lastBuildDate>
+=======
+        <lastBuildDate>Sun, 15 Mar 2020 14:38:18 +0800</lastBuildDate>
+>>>>>>> a194d2ba5207e0a8f79120dde3340f926eec9218
         
             <atom:link rel="self" type="application/rss+xml" href="https://ajatars.github.io/rss.xml" />
         
         
+<<<<<<< HEAD
             <item>
                 <title>CTF Misc</title>
                 <link>https://ajatars.github.io/posts/ctf-misc/</link>
@@ -76,5 +92,7 @@
                 
             </item>
         
+=======
+>>>>>>> a194d2ba5207e0a8f79120dde3340f926eec9218
     </channel>
 </rss>
