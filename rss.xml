@@ -23,7 +23,7 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
         
-        <lastBuildDate>Sun, 15 Mar 2020 16:38:18 +0800</lastBuildDate>
+        <lastBuildDate>Sun, 15 Mar 2020 16:46:58 +0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss+xml" href="https://ajatars.github.io/rss.xml" />
         
@@ -86,7 +86,8 @@
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 
-                    <description><![CDATA[<ul>
+                    <description><![CDATA[<h2 id="目录">目录</h2>
+<ul>
 <li><a href="#1PHP%E7%9B%B8%E5%85%B3">1.PHP相关</a>
 <ul>
 <li><a href="#11%E5%8F%98%E9%87%8F%E8%A6%86%E7%9B%96">1.1 变量覆盖</a></li>
@@ -95,13 +96,13 @@
 </li>
 </ul>
 <h2 id="1php相关">1.PHP相关</h2>
-<h3 id="11-变量覆盖">1.1 变量覆盖</h3>
+<p>1.1 变量覆盖</p>
 <hr>
 <p>变量覆盖通常点有: extract,$$,parse_str(),import_request_variables()</p>
 <p><strong>$$</strong>导致的变量覆盖问题在CTF代码审计题目中经常在foreach中出现</p>
-<p><strong>extract()</strong> 该函数使用数组键名作为变量名，通常结合全局变量$_GET,$_POST,$_REQUEST</p>
+<p><strong>extract()</strong> 该函数使用数组键名作为变量名，通常结合全局变量: $_GET,$_POST,$_REQUEST</p>
 <p><strong>parse_str()</strong> 函数用于把查询字符串解析到变量中，如果没有array 参数，则由该函数设置的变量将覆盖已存在的同名变量</p>
-<p>**import_request_variables()**可以在 register_global = off 时，把 GET/POST/Cookie 变量导入全局作用域中</p>
+<p><strong>import_request_variables()</strong> 可以在 register_global = off 时，把 GET/POST/Cookie 变量导入全局作用域中</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1

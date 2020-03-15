@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
     <title type="text">Ajatar</title>
     <subtitle type="html">Ajatar's blog</subtitle>
-    <updated>2020-03-15T16:38:18+08:00</updated>
+    <updated>2020-03-15T16:46:58+08:00</updated>
     <id>https://ajatars.github.io/</id>
     <link rel="alternate" type="text/html" href="https://ajatars.github.io/" />
     <link rel="self" type="application/atom+xml" href="https://ajatars.github.io/atom.xml" />
@@ -74,7 +74,7 @@
             <title type="text">CTF Web 备忘录（续更）</title>
             <link rel="alternate" type="text/html" href="https://ajatars.github.io/posts/ctf-web/" />
             <id>https://ajatars.github.io/posts/ctf-web/</id>
-            <updated>2020-03-15T16:38:01+08:00</updated>
+            <updated>2020-03-15T16:46:39+08:00</updated>
             <published>2020-03-15T14:42:58+08:00</published>
             <author>
                     <name>Ajatar</name>
@@ -83,9 +83,10 @@
                     </author>
             <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights>
     
-    <summary type="html"><![CDATA[1.PHP相关 1.1 变量覆盖 1.2 变量命名 1.PHP相关 1.1 变量覆盖 变量覆盖通常点有: extract,$$,parse_str(),import_request_variables() $$导……]]></summary>
+    <summary type="html"><![CDATA[目录 1.PHP相关 1.1 变量覆盖 1.2 变量命名 1.PHP相关 1.1 变量覆盖 变量覆盖通常点有: extract,$$,parse_str(),import_request_variables() $……]]></summary>
             
-                <content type="html"><![CDATA[<ul>
+                <content type="html"><![CDATA[<h2 id="目录">目录</h2>
+<ul>
 <li><a href="#1PHP%E7%9B%B8%E5%85%B3">1.PHP相关</a>
 <ul>
 <li><a href="#11%E5%8F%98%E9%87%8F%E8%A6%86%E7%9B%96">1.1 变量覆盖</a></li>
@@ -94,13 +95,13 @@
 </li>
 </ul>
 <h2 id="1php相关">1.PHP相关</h2>
-<h3 id="11-变量覆盖">1.1 变量覆盖</h3>
+<p>1.1 变量覆盖</p>
 <hr>
 <p>变量覆盖通常点有: extract,$$,parse_str(),import_request_variables()</p>
 <p><strong>$$</strong>导致的变量覆盖问题在CTF代码审计题目中经常在foreach中出现</p>
-<p><strong>extract()</strong> 该函数使用数组键名作为变量名，通常结合全局变量$_GET,$_POST,$_REQUEST</p>
+<p><strong>extract()</strong> 该函数使用数组键名作为变量名，通常结合全局变量: $_GET,$_POST,$_REQUEST</p>
 <p><strong>parse_str()</strong> 函数用于把查询字符串解析到变量中，如果没有array 参数，则由该函数设置的变量将覆盖已存在的同名变量</p>
-<p>**import_request_variables()**可以在 register_global = off 时，把 GET/POST/Cookie 变量导入全局作用域中</p>
+<p><strong>import_request_variables()</strong> 可以在 register_global = off 时，把 GET/POST/Cookie 变量导入全局作用域中</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
