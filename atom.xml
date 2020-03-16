@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
     <title type="text">Ajatar</title>
     <subtitle type="html">Ajatar's blog</subtitle>
-    <updated>2020-03-15T17:30:15+08:00</updated>
+    <updated>2020-03-16T15:56:47+08:00</updated>
     <id>https://ajatars.github.io/</id>
     <link rel="alternate" type="text/html" href="https://ajatars.github.io/" />
     <link rel="self" type="application/atom+xml" href="https://ajatars.github.io/atom.xml" />
@@ -74,7 +74,7 @@
             <title type="text">CTF Web 备忘录（续更）</title>
             <link rel="alternate" type="text/html" href="https://ajatars.github.io/posts/ctf-web/" />
             <id>https://ajatars.github.io/posts/ctf-web/</id>
-            <updated>2020-03-15T17:29:36+08:00</updated>
+            <updated>2020-03-16T15:55:59+08:00</updated>
             <published>2020-03-15T14:42:58+08:00</published>
             <author>
                     <name>Ajatar</name>
@@ -83,23 +83,25 @@
                     </author>
             <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights>
     
-    <summary type="html"><![CDATA[1.PHP相关 1.1变量覆盖 1.2变量命名 1.PHP相关 1.1变量覆盖 变量覆盖通常点……]]></summary>
+    <summary type="html"><![CDATA[1.PHP相关 1.1 变量覆盖 1.2 变量命名 1.3 php伪协议 1.4 php反序列化 1.5 突破disable……]]></summary>
             
                 <content type="html"><![CDATA[<hr>
 <blockquote>
 <ul>
 <li><a href="#1php%E7%9B%B8%E5%85%B3">1.PHP相关</a>
 <ul>
-<li><a href="#11%E5%8F%98%E9%87%8F%E8%A6%86%E7%9B%96">1.1变量覆盖</a></li>
-<li><a href="#12%E5%8F%98%E9%87%8F%E5%91%BD%E5%90%8D">1.2变量命名</a></li>
-<li></li>
+<li><a href="#11-%E5%8F%98%E9%87%8F%E8%A6%86%E7%9B%96">1.1 变量覆盖</a></li>
+<li><a href="#12-%E5%8F%98%E9%87%8F%E5%91%BD%E5%90%8D">1.2 变量命名</a></li>
+<li><a href="#13-php%E4%BC%AA%E5%8D%8F%E8%AE%AE">1.3 php伪协议</a></li>
+<li><a href="#14-php%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96">1.4 php反序列化</a></li>
+<li><a href="15-%E7%AA%81%E7%A0%B4disable_functions">1.5 突破disable_functions</a></li>
+<li><a href="16-php%E4%B8%80%E4%BA%9B%E5%87%BD%E6%95%B0">1.6 php一些函数</a></li>
 </ul>
 </li>
 </ul>
 </blockquote>
 <h2 id="1php相关">1.PHP相关</h2>
-<h4 id="11变量覆盖">1.1变量覆盖</h4>
-<hr>
+<h4 id="11-变量覆盖">1.1 变量覆盖</h4>
 <p>变量覆盖通常点有: <strong>extract、$$、parse_str()、import_request_variables()</strong></p>
 <p><strong>$$</strong> 导致的变量覆盖问题在CTF代码审计题目中经常在foreach中出现。</p>
 <p><strong>extract()</strong> 该函数使用数组键名作为变量名，通常结合全局变量: $_GET、$_POST、$_REQUEST。</p>
@@ -123,8 +125,213 @@
 //结构：111
 </code></pre></td></tr></table>
 </div>
-</div><h4 id="12变量命名">1.2变量命名</h4>
+</div><hr>
+<h4 id="12-变量命名">1.2 变量命名</h4>
+<p>php命名变量可使用大括号包裹</p>
+<pre><code>${a} = 'a';
+$
+</code></pre><hr>
+<h4 id="13-php伪协议">1.3 php伪协议</h4>
+<p>php//访问各个输入/输出流（I / O流），在CTF中经常使用的是php://filter和php://input，php://filter用于读取源码，php:/ /input用于执行php代码。</p>
+<p><strong>php://filter</strong>: 常用于读取文件(文件函数可控参数，xxe)、死亡绕过exit(),die()、phar metadate反序列化,当有正则过滤时，可尝试大小写绕过。</p>
+<p>常用的有:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php">读取文件
+php://filter/read=convert.base64-encode/resource=index.php
+Php://filter/read=string.rot13/resource=index.php  
+
+死亡绕过
+php://filter/read=convert.base64-decode/resource=xxx.php  (内容满足base64解码规则)
+php://filter/write=string.rot13/resource=xxx.php (内容满足rot13解密规则，<span class="cp">&lt;?</span><span class="nx">cuc</span> <span class="nx">cucvasb</span><span class="p">();</span><span class="cp">?&gt;</span> )
+反序列化执行
+php://filter/resource=phar://tmp/uploads/xxxx.jpg
+</code></pre></td></tr></table>
+</div>
+</div><hr>
+<h4 id="14-php反序列化">1.4 php反序列化</h4>
+<p>php使用serialize这个过程被称为序列化，使用unserialize这个过程被称为反序列化，其主要作用是便于数据的存储。但是如果未对反序列化数据进行验证，就会导致反序列化任意php对象，造成安全问题。</p>
+<p>除了unserialize，使用phar伪协议可以在不使用unserialize()函数的情况下触发PHP反序列化漏洞，极大地扩展了PHP反序列化的攻击面</p>
+<p><strong>PHP反序列化自动执行的魔术方法</strong></p>
+<table>
+<thead>
+<tr>
+<th>方法名</th>
+<th align="left">调用条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>__call</td>
+<td align="left">调用不可访问或不存在的方法时被调用</td>
+</tr>
+<tr>
+<td>__callStatic</td>
+<td align="left">调用不可访问或不存在的静态方法时被调用</td>
+</tr>
+<tr>
+<td>__clone</td>
+<td align="left">进行对象clone时被调用，用来调整对象的克隆行为</td>
+</tr>
+<tr>
+<td>__constuct</td>
+<td align="left">构建对象的时被调用；</td>
+</tr>
+<tr>
+<td>__debuginfo</td>
+<td align="left">当调用var_dump()打印对象时被调用（当你不想打印所有属性）适用于PHP5.6版本</td>
+</tr>
+<tr>
+<td>__destruct</td>
+<td align="left">明确销毁对象或脚本结束时被调用；</td>
+</tr>
+<tr>
+<td>__get</td>
+<td align="left">读取不可访问或不存在属性时被调用</td>
+</tr>
+<tr>
+<td>__invoke</td>
+<td align="left">当以函数方式调用对象时被调用</td>
+</tr>
+<tr>
+<td>__isset</td>
+<td align="left">对不可访问或不存在的属性调用isset()或empty()时被调用</td>
+</tr>
+<tr>
+<td>__set</td>
+<td align="left">当给不可访问或不存在属性赋值时被调用</td>
+</tr>
+<tr>
+<td>__set_state</td>
+<td align="left">当调用var_export()导出类时，此静态方法被调用。用__set_state的返回值做为var_export的返回值。</td>
+</tr>
+<tr>
+<td>__sleep</td>
+<td align="left">当使用serialize时被调用，当你不需要保存大对象的所有数据时很有用</td>
+</tr>
+<tr>
+<td>__toString</td>
+<td align="left">当一个类被转换成字符串时被调用</td>
+</tr>
+<tr>
+<td>__unset</td>
+<td align="left">对不可访问或不存在的属性进行unset时被调用</td>
+</tr>
+<tr>
+<td>__wakeup</td>
+<td align="left">当使用unserialize时被调用，可用于做些对象的初始化操作</td>
+</tr>
+</tbody>
+</table>
+<p><strong>反序列化起点:</strong></p>
+<p>__wakeup unserialize函数后最先调用</p>
+<p>__destruct 方法销毁后最后调用</p>
+<p>__toSting 当一个对象被当做字符串使用就会被调用</p>
+<p><strong>反向列化中间跳板:</strong></p>
+<p>__toString</p>
+<p>__get  读取不可访问或不存在属性时被调用</p>
+<p>__set 当给不可访问或不存在属性赋值时被调用</p>
+<p>__isset 对不可访问或不存在的属性调用isset()或empty()时被调用</p>
+<p><strong>反序列化终点:</strong></p>
+<p>__call  调用不可访问或不存在的方法时被调用</p>
+<p>call_user_func php代码执行</p>
+<p>call_user_func_array  php代码执行</p>
+<p><strong>phar反序列化:</strong></p>
+<p>phar://伪协议会在多个函数中反序列化其metadata部分</p>
+<p>利用条件:</p>
+<p>1.phar文件要能够上传到目标</p>
+<p>2.文件操作函数的参数可控，且<code>:</code>、<code>/</code>、<code>phar</code>等特殊字符没有被过滤</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php">    //phar
+    @unlink(&#34;phar6.0.phar&#34;)
+    $phar = new Phar(&#34;phar6.0.phar&#34;); //后缀名必须为phar
+    $phar-&gt;startBuffering();
+    $phar-&gt;setStub(&#34;GIF89a<span class="cp">&lt;?php</span> <span class="nx">__HALT_COMPILER</span><span class="p">();</span> <span class="cp">?&gt;</span>&#34;); //设置stub
+    $phar-&gt;setMetadata($obj); //将自定义的meta-data存入manifest
+    $phar-&gt;addFromString(&#34;test.txt&#34;, &#34;test&#34;); //添加要压缩的文件
+    $phar-&gt;stopBuffering();//签名自动计算
+</code></pre></td></tr></table>
+</div>
+</div><p>拓展与详情:</p>
+<p>​	<a href="https://xz.aliyun.com/t/6057#toc-0">SUCTF 2019 出题笔记 &amp; phar 反序列化的一些拓展</a></p>
+<p>​	<a href="https://xz.aliyun.com/t/2958">Phar与Stream Wrapper造成PHP RCE的深入挖掘</a></p>
+<p><strong>关键要点：</strong></p>
+<p>在Private 权限私有属性序列化的时候格式是 %00类名%00属性名，</p>
+<p>在Protected 权限序列化的时候格式是 %00*%00属性名，</p>
+<p>所以当serialize对象时 可用urlencode()进去url编码。</p>
+<p><strong>一些tirck</strong></p>
+<ul>
+<li>
+<p>绕过__wakeup方法:</p>
+<p>​	当执行反序列化时 会先执行__wakeup()方法，一般会在此对反序列化字符串进行相关过滤，<strong>可将序列化字符串中代表变量个数的数字改为大于其真实值的数字进行绕过</strong>。</p>
+</li>
+<li>
+<p>正则过滤类对象或者其它对象时:</p>
+<p>​	可以在对象长度前添加<code>+</code>进行绕过，如<code>o:32</code> 改成 <code>o:+32</code></p>
+</li>
+<li>
+<p>反序列化长度逃逸:</p>
+<p>​	当执行反序列化时,根据序列化字符串中value的长度值来进行取值，且以<code>｝</code>结束，如果定义的长度大于value的真实长度往后面继续填充字符，直到满足长度，漏洞常见于对准备反序列化的字符串进行过滤处理，造成长度值不匹配，使属性值逃逸。</p>
+<p>​	漏洞分析: <a href="https://xz.aliyun.com/t/6521">joomla3.4.6-RCE</a></p>
+<p>​			传入的username包含\0\0\0,经过入库出库变成chr(0)*chr(0),每组长度为6变成了长度为3，属性中的字符串长度不匹配会向后填充，在password构造剩余字段长度和pop链，造成反序列化漏洞。</p>
+<p>​	CTF: <a href="https://www.anquanke.com/post/id/200200#h2-3">i春秋2020新春公益赛babyphp</a></p>
+<p>​			传入的序列化字符串经过safe方法处理过滤字符后，属性中的字符串长度值会比之前传入的大，如 * 替换成了 hacker ，1个字符长度变成了6个字符长度，造成后面的属性值逃逸。</p>
+</li>
+</ul>
 <hr>
+<h4 id="15-突破disable_functions">1.5 突破disable_functions</h4>
+<p>​	这篇两篇文章已经说的很全了</p>
+<p><a href="https://www.anquanke.com/post/id/197745#h3-11">PHP 突破 disable_functions 常用姿势以及使用 Fuzz 挖掘含内部系统调用的函数</a></p>
+<p><a href="https://www.anquanke.com/post/id/195686#h3-6">通过Antsword看绕过disable_functions</a></p>
+<p>​	php7以上比较常用的  <a href="https://github.com/mm0r1/exploits">mm0r1/exploits</a></p>
+<hr>
+<h4 id="16-php一些函数">1.6 php一些函数</h4>
+<p><code>move_uploaded_file()</code></p>
+<p>​	函数进行上传.这个函数会递归删除文件最后的/.字符串(例如1.php/.会被转化为1.php)</p>
+<p><code>create_function()</code></p>
+<p>​	代码注射问题</p>
+<pre><code>&lt;?php
+$a = &quot;2;}phpinfo();/*&quot;;
+$f = create_function('$b', $a);
+</code></pre><p>​	相同的还有<code>assert()</code></p>
+<pre><code>&lt;?php
+$a = &quot;123') or phpinfo();/*&quot;;
+$file = &quot;templates/&quot;.$a.&quot;.php&quot;;
+assert(&quot;strpos('$file', '..') === false&quot;);
+</code></pre><p><code>sprintf()</code></p>
+<p>​	格式化字符串漏洞</p>
+<p>​	占位符<code>%1$\</code> 、<code>%s</code> 、<code>%c</code>的使用 <a href="https://blog.csdn.net/weixin_41185953/article/details/80485075"><strong>深入解析sprintf格式化字符串漏洞</strong></a></p>
+<p><code>filter_var()</code> 和<code>parse_url()</code></p>
+<p>​	伪协议绕过filter_var <code>0://evil.com:80;baidu.com:80</code></p>
+<p>​	将URL的部分变为变量绕过parse_url <code>0://evil$baidu.com</code></p>
+<p>​	结合data://伪协议 + base64</p>
+<p><a href="https://www.jianshu.com/p/80ce73919edb">【SSRF】如何绕过filter_var(), preg_match() 和 parse_url()</a></p>
+<p><code>getimagesize()</code> 可以触发phar 反序列化</p>
+<p><code>get_defined_functions()</code>这个函数是用于返回所有已定义函数的数组
+<code>get_defined_vars() </code>这个函数是返回由所有已定义变量所组成的数组</p>
+<p><code>$_SERVER['REQUEST_URI']</code>以及<code>$_REQUEST</code>会对特殊字符(空格、.、[)转换成为下划线_</p>
 ]]></content>
             
             
