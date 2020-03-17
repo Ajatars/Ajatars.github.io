@@ -23,7 +23,7 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
         
-        <lastBuildDate>Tue, 17 Mar 2020 16:45:08 +0800</lastBuildDate>
+        <lastBuildDate>Tue, 17 Mar 2020 16:47:24 +0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss+xml" href="https://ajatars.github.io/rss.xml" />
         
@@ -135,8 +135,8 @@
 <li><a href="#6%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0">6.文件上传</a>
 <ul>
 <li><a href="#61-fuzz%E6%80%9D%E8%B7%AF">6.1 fuzz思路</a></li>
-<li><a href="#62-htaccess%E5%92%8C.user.ini">6.2 htaccess和.user.ini</a></li>
-<li><a href="#63-php/.%E5%86%99%E6%96%87%E4%BB%B6">6.3 php/.写文件</a></li>
+<li><a href="#62-htaccess%E5%92%8Cuserini">6.2 htaccess和.user.ini</a></li>
+<li><a href="#63-php%E5%86%99%E6%96%87%E4%BB%B6">6.3 php/.写文件</a></li>
 </ul>
 </li>
 </ul>

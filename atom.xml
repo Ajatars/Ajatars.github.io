@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
     <title type="text">Ajatar</title>
     <subtitle type="html">Ajatar's blog</subtitle>
-    <updated>2020-03-17T16:45:08+08:00</updated>
+    <updated>2020-03-17T16:47:24+08:00</updated>
     <id>https://ajatars.github.io/</id>
     <link rel="alternate" type="text/html" href="https://ajatars.github.io/" />
     <link rel="self" type="application/atom+xml" href="https://ajatars.github.io/atom.xml" />
@@ -74,7 +74,7 @@
             <title type="text">CTF Web 备忘录（续更）</title>
             <link rel="alternate" type="text/html" href="https://ajatars.github.io/posts/ctf-web/" />
             <id>https://ajatars.github.io/posts/ctf-web/</id>
-            <updated>2020-03-17T16:44:29+08:00</updated>
+            <updated>2020-03-17T16:47:19+08:00</updated>
             <published>2020-03-15T14:42:58+08:00</published>
             <author>
                     <name>Ajatar</name>
@@ -134,8 +134,8 @@
 <li><a href="#6%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0">6.文件上传</a>
 <ul>
 <li><a href="#61-fuzz%E6%80%9D%E8%B7%AF">6.1 fuzz思路</a></li>
-<li><a href="#62-htaccess%E5%92%8C.user.ini">6.2 htaccess和.user.ini</a></li>
-<li><a href="#63-php/.%E5%86%99%E6%96%87%E4%BB%B6">6.3 php/.写文件</a></li>
+<li><a href="#62-htaccess%E5%92%8Cuserini">6.2 htaccess和.user.ini</a></li>
+<li><a href="#63-php%E5%86%99%E6%96%87%E4%BB%B6">6.3 php/.写文件</a></li>
 </ul>
 </li>
 </ul>
