@@ -23,7 +23,7 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
         
-        <lastBuildDate>Tue, 17 Mar 2020 18:19:12 +0800</lastBuildDate>
+        <lastBuildDate>Tue, 17 Mar 2020 19:09:03 +0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss+xml" href="https://ajatars.github.io/rss.xml" />
         
@@ -423,6 +423,46 @@ print(bashexec)
 <li><a href="#71-bash%E4%B8%8B%E7%9A%84%E4%B8%80%E4%BA%9Btrick">7.1 bash下的一些trick</a></li>
 <li><a href="#72-%E5%B7%A7%E7%94%A8curl">7.2 巧用curl</a></li>
 <li><a href="#73-php%E4%B8%8B%E7%9A%84system%E4%B8%8Eeval">7.3 php下的system与eval</a></li>
+</ul>
+</li>
+<li><a href="#8python%E7%9B%B8%E5%85%B3">8.python相关</a>
+<ul>
+<li><a href="#81-ssti">8.1 ssti</a></li>
+<li><a href="#82-pin%E7%A0%81">8.2 pin码</a></li>
+</ul>
+</li>
+<li><a href="#9java%E7%9B%B8%E5%85%B3">9.java相关</a>
+<ul>
+<li><a href="#91-java%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96">9.1 java反序列化</a></li>
+<li><a href="#92-fastjson%E6%BC%8F%E6%B4%9E">9.2 fastjson漏洞</a></li>
+</ul>
+</li>
+<li><a href="#10javascript%E7%9B%B8%E5%85%B3">10.javascript相关</a>
+<ul>
+<li><a href="#101-javascript%E5%8E%9F%E5%9E%8B%E9%93%BE%E6%B1%A1%E6%9F%93">10.1 javascript原型链污染</a></li>
+<li><a href="#102-preventExtensions%E7%BB%95%E8%BF%87">10.2 preventExtensions绕过</a></li>
+<li><a href="#103-loadsh%E5%BA%93%E6%B1%A1%E6%9F%93">10.3 loadsh库污染</a></li>
+<li><a href="#104-jqueryextend()">10.4 JQuery-$.extend()</a></li>
+<li><a href="#105-ejs%E5%92%8Cjade%E7%9A%84RCE">10.5 ejs和jade的RCE</a></li>
+<li><a href="#106-express%E6%A1%86%E6%9E%B6">10.6 express框架</a></li>
+</ul>
+</li>
+<li><a href="#11nodejs%E7%9B%B8%E5%85%B3">11.NodeJS相关</a>
+<ul>
+<li><a href="#111-%E5%BF%AB%E9%80%9F%E5%90%AF%E5%8A%A8express%E6%A1%86%E6%9E%B6">11.1 快速启动express框架</a></li>
+<li><a href="#112-npm%E6%89%80%E6%9C%89%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E6%BC%8F%E6%B4%9E">11.2 npm所有第三方库漏洞</a></li>
+<li><a href="#113-%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95">11.3 基本语法</a></li>
+<li><a href="#114-url_parse%E7%BB%95%E8%BF%87">11.4 url_parse绕过</a></li>
+<li><a href="#115-%E6%9F%A5%E7%9C%8B%E4%BE%9D%E8%B5%96%E6%BC%8F%E6%B4%9E">11.5 查看依赖漏洞</a></li>
+<li><a href="#116-RCE%E8%AF%AD%E5%8F%A5">11.6 RCE语句</a></li>
+<li>[11.7 nodemon-node的debug模式](#117- nodemon-node的debug模式)</li>
+</ul>
+</li>
+<li><a href="#12XSS">12.XSS</a></li>
+<li><a href="#12%E5%85%B6%E4%BB%96">13.其他</a>
+<ul>
+<li><a href="#121-http%E8%AF%B7%E6%B1%82%E8%B5%B0%E7%A7%81">13.1 http请求走私</a></li>
+<li><a href="#122-jwt%E6%94%BB%E5%87%BB">13.2 jwt攻击</a></li>
 </ul>
 </li>
 </ul>
