@@ -23,7 +23,7 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
         
-        <lastBuildDate>Tue, 17 Mar 2020 17:39:42 +0800</lastBuildDate>
+        <lastBuildDate>Tue, 17 Mar 2020 17:42:46 +0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss+xml" href="https://ajatars.github.io/rss.xml" />
         
@@ -429,7 +429,7 @@ print(bashexec)
 </blockquote>
 <h2 id="1php相关">1.PHP相关</h2>
 <h4 id="11-变量覆盖">1.1 变量覆盖</h4>
-<p>变量覆盖通常点有: **extract、$$、parse_str()。</p>
+<p>变量覆盖通常点有: extract、$$、parse_str()。</p>
 <p><strong>$$</strong> 导致的变量覆盖问题在CTF代码审计题目中经常在foreach中出现。</p>
 <p><strong>extract()</strong> 该函数使用数组键名作为变量名，通常结合全局变量: $_GET、$_POST、$_REQUEST。</p>
 <p><strong>parse_str()</strong> 函数用于把查询字符串解析到变量中，如果没有array 参数，则由该函数设置的变量将覆盖已存在的同名变量。</p>
