@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
     <title type="text">Ajatar</title>
     <subtitle type="html">Ajatar's blog</subtitle>
-    <updated>2020-03-18T21:59:43+08:00</updated>
+    <updated>2020-03-18T22:24:24+08:00</updated>
     <id>https://ajatars.github.io/</id>
     <link rel="alternate" type="text/html" href="https://ajatars.github.io/" />
     <link rel="self" type="application/atom+xml" href="https://ajatars.github.io/atom.xml" />
@@ -358,7 +358,7 @@ print(bashexec)
             <title type="text">CTF Web 备忘录（续更）</title>
             <link rel="alternate" type="text/html" href="https://ajatars.github.io/posts/ctf-web/" />
             <id>https://ajatars.github.io/posts/ctf-web/</id>
-            <updated>2020-03-18T21:59:34+08:00</updated>
+            <updated>2020-03-18T22:23:45+08:00</updated>
             <published>1969-01-01T14:42:58+08:00</published>
             <author>
                     <name>Ajatar</name>
@@ -367,10 +367,11 @@ print(bashexec)
                     </author>
             <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights>
     
-    <summary type="html"><![CDATA[​ CTF web的一些总结与备忘。 1.PHP相关 1.1 变量覆盖 1.2 变量相关 1.3 php伪协议 1.4 php……]]></summary>
+    <summary type="html"><![CDATA[​ CTF web的一些总结与备忘。 目录 1.PHP相关 1.1 变量覆盖 1.2 变量相关 1.3 php伪协议 1.4 p……]]></summary>
             
                 <content type="html"><![CDATA[<hr>
 <p>​					CTF web的一些总结与备忘。</p>
+<h2 id="目录">目录</h2>
 <blockquote>
 <ul>
 <li><a href="#1php%E7%9B%B8%E5%85%B3">1.PHP相关</a>
