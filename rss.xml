@@ -23,7 +23,7 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
         
-        <lastBuildDate>Tue, 17 Mar 2020 19:09:03 +0800</lastBuildDate>
+        <lastBuildDate>Wed, 18 Mar 2020 18:20:09 +0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss+xml" href="https://ajatars.github.io/rss.xml" />
         
@@ -455,7 +455,7 @@ print(bashexec)
 <li><a href="#114-url_parse%E7%BB%95%E8%BF%87">11.4 url_parse绕过</a></li>
 <li><a href="#115-%E6%9F%A5%E7%9C%8B%E4%BE%9D%E8%B5%96%E6%BC%8F%E6%B4%9E">11.5 查看依赖漏洞</a></li>
 <li><a href="#116-RCE%E8%AF%AD%E5%8F%A5">11.6 RCE语句</a></li>
-<li>[11.7 nodemon-node的debug模式](#117- nodemon-node的debug模式)</li>
+<li><a href="#117-nodemon-node%E7%9A%84debug%E6%A8%A1%E5%BC%8F">11.7 nodemon-node的debug模式</a></li>
 </ul>
 </li>
 <li><a href="#12XSS">12.XSS</a></li>
